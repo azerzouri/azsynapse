@@ -76,7 +76,7 @@
 					")\n",
 					"display(df.limit(10))"
 				],
-				"execution_count": 20
+				"execution_count": 37
 			},
 			{
 				"cell_type": "code",
