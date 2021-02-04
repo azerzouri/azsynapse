@@ -22,7 +22,7 @@
 		"metadata": {
 			"saveOutput": true,
 			"language_info": {
-				"name": "python"
+				"name": "csharp"
 			},
 			"a365ComputeOptions": {
 				"id": "/subscriptions/8ad6dfa9-faf9-449e-a7a5-0dc9cda0acf7/resourceGroups/az_sandBox_synapse/providers/Microsoft.Synapse/workspaces/az-sandbox-synapse-analytics/bigDataPools/azSparky",
@@ -84,11 +84,60 @@
 					"%%pyspark\n",
 					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
 					"## If header exists uncomment line below\n",
-					"##, header=True\n",
+					", header=True\n",
 					")\n",
 					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")"
 				],
-				"execution_count": 22
+				"execution_count": 42
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"diagram": {
+						"activateDiagramType": 1,
+						"chartConfig": {
+							"category": "bar",
+							"keys": [
+								"YEARMONTH"
+							],
+							"values": [
+								"YEARMONTH"
+							],
+							"yLabel": "YEARMONTH",
+							"xLabel": "YEARMONTH",
+							"aggregation": "COUNT",
+							"aggByBackend": false
+						},
+						"aggData": "{\"YEARMONTH\":{\"201904\":543,\"201909\":62,\"201911\":173,\"201912\":223}}",
+						"isSummary": false,
+						"previewData": {
+							"filter": null
+						},
+						"isSql": false
+					}
+				},
+				"source": [
+					"var accountName = \"azsandboxlake2\";\n",
+					"var containerName = \"azsandboxfilesys\";\n",
+					"var file = \"/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\";\n",
+					"\n",
+					"// Build the ADLS path to that file\n",
+					"var adlsInputPath = $\"abfss://{containerName}@{accountName}.dfs.core.windows.net/{file}\";\n",
+					"var inputReader = spark.Read()\n",
+					"    .Option(\"header\", true)\n",
+					"    .Option(\"delimiter\", \",\")\n",
+					"    .Option(\"charset\", \"iso-8859-1\");\n",
+					"\n",
+					"var inputDataFrame = inputReader.Csv(new string[] {adlsInputPath});\n",
+					"\n",
+					"// Add a unique ID to our movies list\n",
+					"inputDataFrame = inputDataFrame\n",
+					"    .WithColumn(\"ID\", Expr(\"uuid()\"));\n",
+					"\n",
+					"// Display the DataFrame\n",
+					"Display(inputDataFrame);"
+				],
+				"execution_count": 55
 			},
 			{
 				"cell_type": "code",
@@ -114,10 +163,10 @@
 				},
 				"source": [
 					"%%sql\n",
-					"SELECT  * FROM aztbl\n",
+					"SELECT  * FROM aztbl LIMIT 10\n",
 					"--DROP TABLE aztbl"
 				],
-				"execution_count": 27
+				"execution_count": 43
 			}
 		]
 	}
