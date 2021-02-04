@@ -50,17 +50,17 @@
 						"chartConfig": {
 							"category": "bar",
 							"keys": [
-								"_c0"
+								"YEARMONTH"
 							],
 							"values": [
-								"_c0"
+								"YEARMONTH"
 							],
-							"yLabel": "_c0",
-							"xLabel": "_c0",
+							"yLabel": "YEARMONTH",
+							"xLabel": "YEARMONTH",
 							"aggregation": "COUNT",
 							"aggByBackend": false
 						},
-						"aggData": "{\"_c0\":{\"201909\":9,\"YEARMONTH\":1}}",
+						"aggData": "{\"YEARMONTH\":{\"201909\":10}}",
 						"isSummary": false,
 						"previewData": {
 							"filter": null
@@ -70,13 +70,54 @@
 				},
 				"source": [
 					"%%pyspark\n",
-					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
+					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv',\n",
 					"## If header exists uncomment line below\n",
 					"header=True\n",
 					")\n",
 					"display(df.limit(10))"
 				],
-				"execution_count": 1
+				"execution_count": 20
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\n",
+					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
+					"## If header exists uncomment line below\n",
+					"##, header=True\n",
+					")\n",
+					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")"
+				],
+				"execution_count": 22
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"diagram": {
+						"activateDiagramType": 1,
+						"chartConfig": {
+							"category": "bar",
+							"keys": [],
+							"values": [],
+							"yLabel": "",
+							"xLabel": "",
+							"aggregation": "SUM",
+							"aggByBackend": false
+						},
+						"aggData": "{}",
+						"isSummary": false,
+						"previewData": {
+							"filter": null
+						},
+						"isSql": true
+					}
+				},
+				"source": [
+					"%%sql\n",
+					"SELECT  * FROM aztbl\n",
+					"--DROP TABLE aztbl"
+				],
+				"execution_count": 27
 			}
 		]
 	}
