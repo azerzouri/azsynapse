@@ -43,7 +43,122 @@
 						"tableOption": "autoCreate"
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "YEARMONTH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "YEARMONTH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EPISODE_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EPISODE_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EVENT_ID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EVENT_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_INDEX",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION_INDEX",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RANGE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RANGE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AZIMUTH",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AZIMUTH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LOCATION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LATITUDE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LATITUDE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LONGITUDE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LONGITUDE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAT2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAT2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LON2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LON2",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
