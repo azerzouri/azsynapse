@@ -117,6 +117,7 @@
 					}
 				},
 				"source": [
+					"%%csharp\n",
 					"var accountName = \"azsandboxlake2\";\n",
 					"var containerName = \"azsandboxfilesys\";\n",
 					"var file = \"/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\";\n",
@@ -137,7 +138,7 @@
 					"// Display the DataFrame\n",
 					"Display(inputDataFrame);"
 				],
-				"execution_count": 55
+				"execution_count": 56
 			},
 			{
 				"cell_type": "code",
