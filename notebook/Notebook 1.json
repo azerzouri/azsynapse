@@ -44,45 +44,9 @@
 		"cells": [
 			{
 				"cell_type": "code",
-				"metadata": {
-					"diagram": {
-						"activateDiagramType": 1,
-						"chartConfig": {
-							"category": "bar",
-							"keys": [
-								"YEARMONTH"
-							],
-							"values": [
-								"YEARMONTH"
-							],
-							"yLabel": "YEARMONTH",
-							"xLabel": "YEARMONTH",
-							"aggregation": "COUNT",
-							"aggByBackend": false
-						},
-						"aggData": "{\"YEARMONTH\":{\"201909\":10}}",
-						"isSummary": false,
-						"previewData": {
-							"filter": null
-						},
-						"isSql": false
-					}
-				},
-				"source": [
-					"%%pyspark\n",
-					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv',\n",
-					"## If header exists uncomment line below\n",
-					"header=True\n",
-					")\n",
-					"display(df.limit(10))"
-				],
-				"execution_count": 1
-			},
-			{
-				"cell_type": "code",
 				"source": [
 					"%%spark\n",
-					"val df = spark.read.option(\"header\",true).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
+					"val df = spark.read.options(Map(\"delimiter\"->\",\"),(\"header\",true)).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
 					"df.write.mode(\"overwrite\").saveAsTable(\"aztblscala\")\n",
 					"df.printSchema()"
 				],
@@ -97,6 +61,7 @@
 					", header=True\n",
 					")\n",
 					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")\n",
+					"display(df.limit(10))\n",
 					"df.printSchema()"
 				],
 				"execution_count": 15
@@ -177,10 +142,10 @@
 					"%%sql\n",
 					"--SELECT  * FROM aztbl LIMIT 10\n",
 					"--SELECT * FROM aztblscala LIMIT 10\n",
-					"DROP TABLE aztbl\n",
+					"DROP TABLE aztblscala\n",
 					"--DROP TABLE aztblscala"
 				],
-				"execution_count": 14
+				"execution_count": 16
 			}
 		]
 	}
