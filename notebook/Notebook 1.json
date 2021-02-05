@@ -76,7 +76,17 @@
 					")\n",
 					"display(df.limit(10))"
 				],
-				"execution_count": 37
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%spark\n",
+					"val df = spark.read.option(\"header\",true).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
+					"df.write.mode(\"overwrite\").saveAsTable(\"aztblscala\")\n",
+					"df.printSchema()"
+				],
+				"execution_count": 8
 			},
 			{
 				"cell_type": "code",
@@ -88,7 +98,7 @@
 					")\n",
 					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")"
 				],
-				"execution_count": 42
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -138,7 +148,7 @@
 					"// Display the DataFrame\n",
 					"Display(inputDataFrame);"
 				],
-				"execution_count": 56
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -164,10 +174,13 @@
 				},
 				"source": [
 					"%%sql\n",
-					"SELECT  * FROM aztbl LIMIT 10\n",
-					"--DROP TABLE aztbl"
+					"--SELECT  * FROM aztbl LIMIT 10\n",
+					"\n",
+					"SELECT * FROM aztblscala LIMIT 10\n",
+					"--DROP TABLE aztbl\n",
+					"--DROP TABLE aztblscala"
 				],
-				"execution_count": 43
+				"execution_count": 13
 			}
 		]
 	}
