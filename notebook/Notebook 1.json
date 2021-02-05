@@ -96,9 +96,10 @@
 					"## If header exists uncomment line below\n",
 					", header=True\n",
 					")\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")"
+					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")\n",
+					"df.printSchema()"
 				],
-				"execution_count": null
+				"execution_count": 15
 			},
 			{
 				"cell_type": "code",
@@ -175,12 +176,11 @@
 				"source": [
 					"%%sql\n",
 					"--SELECT  * FROM aztbl LIMIT 10\n",
-					"\n",
-					"SELECT * FROM aztblscala LIMIT 10\n",
-					"--DROP TABLE aztbl\n",
+					"--SELECT * FROM aztblscala LIMIT 10\n",
+					"DROP TABLE aztbl\n",
 					"--DROP TABLE aztblscala"
 				],
-				"execution_count": 13
+				"execution_count": 14
 			}
 		]
 	}
