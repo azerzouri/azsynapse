@@ -152,6 +152,7 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"outputCollapsed": true,
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
