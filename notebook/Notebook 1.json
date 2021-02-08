@@ -54,9 +54,6 @@
 			},
 			{
 				"cell_type": "code",
-				"metadata": {
-					"inputCollapsed": true
-				},
 				"source": [
 					"%%pyspark\n",
 					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
@@ -68,6 +65,14 @@
 					"df.printSchema()"
 				],
 				"execution_count": 15
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%spark\n",
+					"spark.sql(\"CREATE DATABASE IF NOT EXISTS default\")"
+				],
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
