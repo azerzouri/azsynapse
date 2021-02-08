@@ -49,7 +49,7 @@
 					"spark.sql(\"DROP TABLE IF EXISTS aztblscala\")\n",
 					"spark.sql(\"DROP TABLE IF EXISTS aztbl\")"
 				],
-				"execution_count": 1
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
@@ -59,10 +59,34 @@
 					"df.write.mode(\"overwrite\").saveAsTable(\"aztblscala\")\n",
 					"df.printSchema()"
 				],
-				"execution_count": null
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"diagram": {
+						"activateDiagramType": 1,
+						"chartConfig": {
+							"category": "bar",
+							"keys": [
+								"YEARMONTH"
+							],
+							"values": [
+								"YEARMONTH"
+							],
+							"yLabel": "YEARMONTH",
+							"xLabel": "YEARMONTH",
+							"aggregation": "COUNT",
+							"aggByBackend": false
+						},
+						"aggData": "{\"YEARMONTH\":{\"201909\":10}}",
+						"isSummary": false,
+						"previewData": {
+							"filter": null
+						},
+						"isSql": false
+					}
+				},
 				"source": [
 					"%%pyspark\n",
 					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
@@ -73,7 +97,7 @@
 					"display(df.limit(10))\n",
 					"## df.printSchema()"
 				],
-				"execution_count": 15
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -123,7 +147,7 @@
 					"// Display the DataFrame\n",
 					"Display(inputDataFrame);"
 				],
-				"execution_count": null
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
@@ -149,11 +173,11 @@
 				},
 				"source": [
 					"%%sql\n",
-					"--SELECT  * FROM aztbl LIMIT 10\n",
+					"SELECT  * FROM aztbl LIMIT 10\n",
 					"--SELECT * FROM aztblscala LIMIT 10\n",
 					""
 				],
-				"execution_count": 16
+				"execution_count": 5
 			}
 		]
 	}
