@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_5ur",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "StormEvent",
+			"table": "Azure Data Lake Storage Gen2 file"
+		}
+	}
+}
