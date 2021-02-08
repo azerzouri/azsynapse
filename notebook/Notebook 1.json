@@ -179,6 +179,15 @@
 					""
 				],
 				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"source": [
+					"%%spark\n",
+					"val df = spark.sql(\"SELECT * FROM aztblscala WHERE LOCATION = 'NEW HAMPSHIRE'\") \n",
+					"df.show(10)"
+				],
+				"execution_count": 3
 			}
 		]
 	}
