@@ -70,7 +70,7 @@
 				"cell_type": "code",
 				"source": [
 					"%%spark\n",
-					"spark.sql(\"CREATE DATABASE IF NOT EXISTS aztblscala\")"
+					"spark.sql(\"DROP TABLE IF EXISTS aztblscala\")"
 				],
 				"execution_count": null
 			},
