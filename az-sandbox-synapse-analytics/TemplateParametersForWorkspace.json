@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "az-sandbox-synapse-analytics"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"az-sandbox-synapse-analytics-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://azsandboxlake2.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://azsandboxlake2.dfs.core.windows.net"
+		},
+		"az-sandbox-synapse-analytics-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://azsandboxlake2.dfs.core.windows.net"
+		},
+		"us-local-area-unemployment-statistics_sasUri": {
+			"value": ""
+		}
+	}
+}
