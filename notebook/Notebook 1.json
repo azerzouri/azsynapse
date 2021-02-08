@@ -46,14 +46,17 @@
 				"cell_type": "code",
 				"source": [
 					"%%spark\n",
-					"val df = spark.read.options(Map(\"delimiter\"->\",\"),(\"header\",true)).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
+					"val df = spark.read.option(\"header\",true).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
 					"df.write.mode(\"overwrite\").saveAsTable(\"aztblscala\")\n",
 					"df.printSchema()"
 				],
-				"execution_count": 8
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"inputCollapsed": true
+				},
 				"source": [
 					"%%pyspark\n",
 					"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
