@@ -1,0 +1,1 @@
+D:\Documents\Lib_Personal\AzureCloudFormation\SynapseDeployment\SynapseDeployment\obj\Debug\SynapseDeployment.deployproj.CoreCompileInputs.cache
