@@ -21,6 +21,185 @@
 		},
 		"metadata": {
 			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"4fd22962-1a06-4e3f-9dcc-d9d06f263ba1": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842708",
+										"LATITUDE": "45.42",
+										"EPISODE_ID": "140030",
+										"LOCATION": "GILCHRIST",
+										"LAT2": "4525200",
+										"RANGE": "3.49",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-95.34",
+										"LON2": "9520400",
+										"AZIMUTH": "S"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842709",
+										"LATITUDE": "45.5",
+										"EPISODE_ID": "140030",
+										"LOCATION": "BROOTEN",
+										"LAT2": "4530000",
+										"RANGE": "0",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-95.12",
+										"LON2": "957200",
+										"AZIMUTH": "N"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842710",
+										"LATITUDE": "45.3",
+										"EPISODE_ID": "140030",
+										"LOCATION": "NEW LONDON",
+										"LAT2": "4518000",
+										"RANGE": "0",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-94.95",
+										"LON2": "9457000",
+										"AZIMUTH": "N"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842711",
+										"LATITUDE": "45.45",
+										"EPISODE_ID": "140030",
+										"LOCATION": "BELGRADE",
+										"LAT2": "4527000",
+										"RANGE": "0",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-95",
+										"LON2": "9500",
+										"AZIMUTH": "N"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842712",
+										"LATITUDE": "44.44",
+										"EPISODE_ID": "140030",
+										"LOCATION": "MONTGOMERY",
+										"LAT2": "4426400",
+										"RANGE": ".69",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-93.58",
+										"LON2": "9334800",
+										"AZIMUTH": "N"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842713",
+										"LATITUDE": "44.25",
+										"EPISODE_ID": "140030",
+										"LOCATION": "MORRISTOWN",
+										"LAT2": "4415000",
+										"RANGE": "1.47",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-93.44",
+										"LON2": "9326400",
+										"AZIMUTH": "NNE"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842714",
+										"LATITUDE": "45.87",
+										"EPISODE_ID": "140030",
+										"LOCATION": "(AXN)CHNDLR FLD ALXN",
+										"LAT2": "4552200",
+										"RANGE": "0",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-95.4",
+										"LON2": "9524000",
+										"AZIMUTH": "N"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842716",
+										"LATITUDE": "45.77",
+										"EPISODE_ID": "140030",
+										"LOCATION": "RICE",
+										"LAT2": "4546200",
+										"RANGE": "1.38",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-94.23",
+										"LON2": "9413800",
+										"AZIMUTH": "N"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842718",
+										"LATITUDE": "45.42",
+										"EPISODE_ID": "140030",
+										"LOCATION": "LUXEMBURG",
+										"LAT2": "4525200",
+										"RANGE": "2.84",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-94.21",
+										"LON2": "9412600",
+										"AZIMUTH": "SE"
+									},
+									{
+										"YEARMONTH": "201909",
+										"EVENT_ID": "842719",
+										"LATITUDE": "45.55",
+										"EPISODE_ID": "140030",
+										"LOCATION": "(STC)ST CLOUD REGIONAL AIRPORT",
+										"LAT2": "4533000",
+										"RANGE": ".97",
+										"LOCATION_INDEX": "1",
+										"LONGITUDE": "-94.05",
+										"LON2": "943000",
+										"AZIMUTH": "E"
+									}
+								],
+								"schema": {
+									"YEARMONTH": "string",
+									"EPISODE_ID": "string",
+									"EVENT_ID": "string",
+									"LOCATION_INDEX": "string",
+									"RANGE": "string",
+									"AZIMUTH": "string",
+									"LOCATION": "string",
+									"LATITUDE": "string",
+									"LONGITUDE": "string",
+									"LAT2": "string",
+									"LON2": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"YEARMONTH"
+									],
+									"seriesFieldKeys": [
+										"YEARMONTH"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"kernelspec": {
+				"name": "synapse_sparkdotnet",
+				"display_name": "Synapse SparkDotNet"
+			},
 			"language_info": {
 				"name": "csharp"
 			},
@@ -44,6 +223,11 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "scala"
+					}
+				},
 				"source": [
 					"%%spark\n",
 					"spark.sql(\"DROP TABLE IF EXISTS aztblscala\")\n",
@@ -53,6 +237,41 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"def write_parquet_file():\r\n",
+					"    df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\r\n",
+					"    ## If header exists uncomment line below\r\n",
+					"    , header=True\r\n",
+					"    )\r\n",
+					"    df.repartition(1).write.mode('overwrite').parquet(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations.parquet\")\r\n",
+					"write_parquet_file()\r\n",
+					""
+				],
+				"execution_count": 10
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "scala"
+					}
+				},
 				"source": [
 					"%%spark\n",
 					"val df = spark.read.option(\"header\",true).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
@@ -64,6 +283,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
@@ -85,7 +307,8 @@
 							"filter": null
 						},
 						"isSql": false
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
 					"%%pyspark\n",
@@ -93,15 +316,18 @@
 					"## If header exists uncomment line below\n",
 					", header=True\n",
 					")\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")\n",
+					"# df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")\n",
 					"display(df.limit(10))\n",
 					"## df.printSchema()"
 				],
-				"execution_count": 4
+				"execution_count": 6
 			},
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "csharp"
+					},
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
@@ -153,6 +379,9 @@
 				"cell_type": "code",
 				"metadata": {
 					"outputCollapsed": true,
+					"microsoft": {
+						"language": "sparksql"
+					},
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
@@ -182,6 +411,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "scala"
+					}
+				},
 				"source": [
 					"%%spark\n",
 					"val df = spark.sql(\"SELECT * FROM aztblscala WHERE LOCATION = 'NEW HAMPSHIRE'\") \n",
