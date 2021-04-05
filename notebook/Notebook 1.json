@@ -260,13 +260,13 @@
 					"    , header=True\r\n",
 					"    )\r\n",
 					"    df.repartition(1).write.mode('overwrite').parquet(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations.parquet\")\r\n",
-					"def read_parquet_file()\r\n",
-					"    df = spark.read.parquet(abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations\")\r\n",
-					"    df.show()\r\n",
+					"def read_parquet_file():\r\n",
+					"    df1 = spark.read.parquet(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations.parquet\")\r\n",
+					"    df1.show()\r\n",
 					"write_parquet_file()\r\n",
 					"read_parquet_file()"
 				],
-				"execution_count": 11
+				"execution_count": 16
 			},
 			{
 				"cell_type": "code",
