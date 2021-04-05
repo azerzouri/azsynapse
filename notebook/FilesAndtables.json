@@ -20,11 +20,702 @@
 		"metadata": {
 			"saveOutput": true,
 			"synapse_widget": {
-				"version": "0.1"
+				"version": "0.1",
+				"state": {
+					"335fdc0e-2f99-4fab-a4fe-749b5ca0316b": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"ID": "19948f3c-2531-406a-a841-c07d657b8e70",
+										"name": "California Car Hikers",
+										"specialTrackingGroup": "10014",
+										"workMatterNumber": "WM000002707",
+										"description": "R. Glover Report on work matter",
+										"adjuster": "10123",
+										"coverageDescription": "This loss was tendered under 5 policies: NN9093006, NM9093005, NP9093006, OL8557707,  OL9031705",
+										"executiveSummary": "EPA sent California Car Hikers a PRP letter on March 28, 2006 advising CCH that the EPA was considering remedial action on the North Hollywood Operable Unit Site. Industrial Indemnity issued commercial liability policies for the three-year period from 10/8/87 to 10/8/90. On February 20, 2008, CFI issued a disclaimer because there had been no suit filed and the presence of absolute pollution exclusions on each of the policies.  Subsequently, CCH forwarded a âSpecial Notice Letterâ that it received from the EPA. Coverage counsel for CCH reviewed the letter and recommended that CFI issue a reiteration disclaimer to the insured in response.  On November 16, 2010,CFI issued a letter reiterating its opinions from February of 2008.",
+										"dateCreated": "2013-09-09 14:37:00.0000000",
+										"status": "True",
+										"insured": "California Car Hikers Service (\"CCHS\"), which holds the title to 11590 Tuxford Street, Sun Valley, California.  The property is a 26.82 acre parcel that is located on the site of a former landfill commonly known variously as the \"Old Tuxford Pit\" or the \"Tuxford Landfill.\"",
+										"workMatterType": "10002"
+									},
+									{
+										"workMatterNumber": "Industrial Indemnity issued commercial liability policies for the three-year period from 10/8/87 to 10/8/90.  Policy NM 909-3005 (10/8/87 to 10/8/88) has limits of $1 million per occurrence, $2 million products/completed operations, and $2 million general aggregate.  Policy OL 903-1705 (10/8/88 to 10/8/89) has limits of $1 million per occurrence, $1 million products/completed operations, and $1 million general aggregate.  Policy OL 855-7707 (10/8/89 to 10/8/90) has limits of $1 million per occurrence, $1 million products/completed operations, and $1 million general aggregate.",
+										"ID": "f8d17635-5e85-4b37-875e-34e0b092a670"
+									},
+									{
+										"ID": "19e3657a-d247-4120-beec-f5a4ca413de8",
+										"name": "At this time, loss reserves are set at $202.  This appears adequate at this time based on the current circumstances described above.",
+										"specialTrackingGroup": "Unknown",
+										"workMatterNumber": "Coverage counsel advises there is no duty to defend absent suit being filed, and because there are absolute pollution exclusions on all policies",
+										"adjuster": "EPA sent California Car Hikers a PRP letter on March 28, 2006 advising CCH that the EPA was considering remedial action on the North Hollywood Operable Unit Site. Industrial Indemnity issued commercial liability policies for the three-year period from 10/8/87 to 10/8/90. On February 20, 2008, CFI issued a disclaimer because there had been no suit filed and the presence of absolute pollution exclusions on each of the policies.  Subsequently, CCH forwarded a âSpecial Notice Letterâ that it received from the EPA. Coverage counsel for CCH reviewed the letter and recommended that CFI issue a reiteration disclaimer to the insured in response.  On November 16, 2010,CFI issued a letter reiterating its opinions from February of 2008.",
+										"dateCreated": "-Continue to monitor with defense counsel for expiration of the SOL. ",
+										"status": "Even with an EPA suit, the policies contain pollution exclusions.  Exposure seems minimal at this time.",
+										"workMatterType": "The insured was put on notice based on its ownership of the site in question."
+									},
+									{
+										"workMatterNumber": "-Contact coverage counsel and request any additional information concerning possible suit.",
+										"ID": "b3eb6c6c-3b63-47c0-815c-366cffb708eb"
+									},
+									{
+										"workMatterNumber": "-Discuss possible closure of claim.",
+										"ID": "4792373a-f0ca-4454-a345-e2902cfa2293"
+									},
+									{
+										"ID": "d2168b06-fa96-4e9b-95c7-c62e8d1ba1c6",
+										"name": "Reserve Review",
+										"specialTrackingGroup": "10001",
+										"workMatterNumber": "WM000021881",
+										"description": "Claim analysis",
+										"adjuster": "9635",
+										"executiveSummary": "In a letter dated February 28, 2013, Robert J. Cole (âMr. Coleâ), father of Adam Cole (âAdamâ), indicated that he is attempting to recover some information with respect to an incident that occurred on July 17, 2000 (the âIncidentâ) while Adam was participating in a Troy Baseball Boostersâ (âTBBâsâ) sports program.  According to our records, the Incident was reported to K&K Insurance Group on August 7, 2000.   The claim was tendered to TIG under the above referenced policy.  Claim number PA0131500 was set up and based upon the medical statement provided by Mr. Cole, TIG issued payment of $789.00 to Robert and Nancy Cole under Coverage C â Medical Payments of the policy.",
+										"dateCreated": "2013-09-09 13:53:00.0000000",
+										"status": "True",
+										"workMatterType": "10007"
+									},
+									{
+										"workMatterNumber": "As Adam was a minor when he was injured, some of the dental work could not be performed until Adam became an adult.  The dental claim is now being presented.",
+										"workMatterType": "Troy Baseball Boosters was enrolled as a Member of the Sports, Leisure & Entertainment Risk Purchase Group d/b/a Amateur Teams & Leagues",
+										"adjuster": "TIG issued a Commercial General Liability (CGL) policy to Sports, Leisure & Entertainment RPG d/b/a Amateur Teams & Leagues under policy number SSP0003803111100 (Eff. 03/06/2000 to 03/06/2001) (âthe TIG policyâ).   The Named Insured includes Sports, Leisure and Entertainment Risk Purchasing Group and its Members who have enrolled in the Insurance Program and for which a premium has been paid and to whom a certificate of insurance has been issued;  All Officers, Directors, Coaches, Umpires and Other Volunteer Workers while acting on behalf of the Organization, or its Members.",
+										"ID": "3bf63c10-9435-4fbe-b2ce-fc25d0b0d50f"
+									},
+									{
+										"ID": "ae7048a1-1937-490b-8b41-e270ca063463",
+										"specialTrackingGroup": "Adam's father provided proposed dental treatment plans costing $9,241.25.",
+										"workMatterNumber": "Troy Baseball Boosters was enrolled as a Member for the policy period of March 6, 2000 to March 6, 2001.  The TIG Policy has limits of $1,000,000 per occurrence and Medical Expense limits of $5,000 to any one person.  Additionally, there is an additional Medical Payments limit of $25,000 per occurrence.",
+										"adjuster": "DISCLAIMER OF COVERAGE UNDER Coverage E â Medical Payments",
+										"workMatterType": "Adam Cole (a minor) was injured as a participant in a TBB sponsored gameon July 17, 2000 .  Although TBB had parents sign waivers of liabilities, none can be located due to passage of time and change in leadership.  As this is an injury to a minor, usual defenses such as contributory negligence and assumption of risk will not be applicable.  However -"
+									},
+									{
+										"workMatterNumber": "Mr. Cole contends that coverage for Adamâs injuries arising out of the July 17, 2000 Incident should be extended.   TIG had previously paid Mr. Cole for medical expenses incurred under Coverage E â Medical Payments for âParticipant.â  However, one of the conditions for coverage under Coverage E is that such medical expenses must be incurred and reported to TIG within 104 weeks from the date of the accident.  As Mr. Coleâs recent claim is made nearly thirteen (13) years after the Incident, there is no coverage under Coverage E.  ",
+										"ID": "07343aa8-b669-4ba2-9887-d7dfe18b6404"
+									},
+									{
+										"workMatterNumber": "POTENTIAL COVERAGE UNDER Coverage D - LEGAL LIABILITY TO PARTICIPANTS",
+										"ID": "35cda448-931d-4dff-b55d-a1d4bfef86cc"
+									},
+									{
+										"workMatterNumber": "The TIG Policy is subject to endorsement LB 26143 SLE (1/99).  The endorsement adds Coverage D for injuries to \"participants.\"",
+										"ID": "53575ff7-3ad6-489b-8d0d-b2e104302f84"
+									},
+									{
+										"workMatterNumber": "COVERAGE D â LIABILITY TO âPARTICIPANTSâ",
+										"ID": "da61d06c-b540-4691-8f37-2bdcfa1c868e"
+									},
+									{
+										"workMatterNumber": "1.\tInsuring Agreement",
+										"ID": "3871be5e-7a0c-44b8-9bed-cdb6640cd7ea"
+									},
+									{
+										"workMatterNumber": "a.\tWe will pay those sums that the insured becomes legally obligated to pay as damages because of âbodily injuryâ to any âparticipant.â  We will have the right and duty to defend the insured against any âsuitâ seeking damages for âbodily injuryâ to which this insurance does not apply.  We may, at our discretion, investigate any âoccurrenceâ and settle any claim or âsuitâ that may result.",
+										"ID": "f01f93ab-4c4f-49b8-9520-83ed17c04a66"
+									},
+									{
+										"workMatterNumber": "No suit filed and is now time barred by Statute of limitations",
+										"workMatterType": "There is no potential exposure. The claimant is time barred from bringing suit.  The obligation to defend is only triggerd by suit.",
+										"ID": "c560e4e8-589e-493a-83e0-49a11d99524f"
+									},
+									{
+										"workMatterNumber": "The personal injury tender was accepted however, and will therefore the WM will be kept while I attempt to get an ackowledgement from claimant that he is not filing suit.",
+										"ID": "aac75c00-b4af-41ac-a786-ccdef4ed4c5e"
+									},
+									{
+										"workMatterNumber": "8/15/13  notified claimant ",
+										"ID": "b579bf0a-e8b1-4bf8-b9d6-eb7d186530be"
+									},
+									{
+										"workMatterNumber": "With respect to Coverage D, the TIG policy issued to TBB would only pay for those sums that the Insured becomes legally obligated to pay as damages because of âbodily injuryâ to any âparticipant.â   In other words, unlike Coverage E, in order for there to be coverage, TBB must be legally liable for Adamâs injury.  Considering the statute limitations, the claimant's age, and the time passed, there is no exposure â see claim evaluation.",
+										"workMatterType": "To be covered, medical expenses must have (among other things) been incurred within 104 weeks of the date of the accident.  They were not.  ",
+										"ID": "27bda102-5b49-44fb-a0d3-a3909615018c"
+									},
+									{
+										"workMatterNumber": "If the claimant attempted to assert a claim against the named insured for bodily injury he would be barred by the applicable statute of limitations.  Michigan has a 3 year SOL for personal injury which can be extended for 1 year once the claimant's disability (minority) is removed.  Claimant would have had to bring a claim by his 19th birthday.  Claimant's DOB is 8.5.1992.  He is 21 YOA and therefore barred from filing a lawsuit against the NI for the injuries that occurred when he was 12 yoa.",
+										"ID": "9171a697-30bc-42e5-af1d-390f58c9f3d7"
+									},
+									{
+										"workMatterNumber": "CAL indicated:",
+										"ID": "9565bbd2-4c01-49fb-a879-940c1eb2f3e8"
+									},
+									{
+										"workMatterNumber": "Based upon information currently available, TIG will agree to accept TBBâs tender under Coverage D pursuant to the following terms. Initially, there is no âsuitâ and TIG thus has no duty to defend TBB. TIGâs assumption of its indemnity obligations to the Insured is expressly understood and agreed to be limited to claims or loss arising out of the above described personal injury claim.",
+										"ID": "0d6704ac-f507-43d0-bd74-3b3a3155c2e6"
+									},
+									{
+										"workMatterNumber": "Unless and until there is a suit filed there is no obligation to defend or indemnify triggered. Signal loss reserves of $100 will be set.  No defense reserves are needed.",
+										"workMatterType": "Although the claimants potential claim is time barred by the applicable statute of limitations, I will keep this work matter open and review in 60 days to see if suit has been brought.",
+										"ID": "a02cfbbe-6748-42ed-9bea-ea5d4a5ab5c5"
+									},
+									{
+										"ID": "7672f9a2-1f70-4999-86f7-93aed1060024",
+										"name": "Reserves 09/09/13",
+										"specialTrackingGroup": "10001",
+										"workMatterNumber": "WM000009826",
+										"description": "Reserve analysis 090913",
+										"adjuster": "21604",
+										"claimEvaluation_reserveAnalysis": "Widow Pension.",
+										"dateCreated": "2013-09-09 11:20:00.0000000",
+										"status": "False",
+										"workMatterType": "10006"
+									},
+									{
+										"workMatterNumber": "Texas WC - cannot settle.",
+										"ID": "0206426e-c7a0-462c-a561-8e40891fd5c3"
+									},
+									{
+										"workMatterNumber": "48.5-yr old female.",
+										"ID": "3725ea2e-73c3-4104-8e1c-53cd108e78ec"
+									},
+									{
+										"workMatterNumber": "NLE 33.85 years.",
+										"ID": "d5d76112-a140-4154-9ee8-f7d49651eabf"
+									},
+									{
+										"workMatterNumber": "Annual WC rate = $23,777.14",
+										"ID": "8fb8e379-d390-4153-b7a3-91e5ab78862a"
+									},
+									{
+										"workMatterNumber": "Future Loss Exposure = $804,856",
+										"ID": "7b1adc08-d50b-4b01-bc4e-908802b0cc49"
+									},
+									{
+										"workMatterNumber": "Plus immediate reimbursement owed of $2,281",
+										"ID": "f7a35466-85be-4fdf-a861-26cf054c533a"
+									},
+									{
+										"workMatterNumber": "Total Loss Exposure $807,137.",
+										"ID": "65f15e26-5ca9-4601-89ba-1e54f4934ad7"
+									},
+									{
+										"workMatterNumber": "If the widow lives this full NLE of $33.85 years, we'll be presented with an open claim for an 82-year old female with revised NLE at that time of 8.2 years.  $23,777.14 X 8.2 = $194,973.",
+										"ID": "ebf50e51-033c-4c4a-a202-713264da5f8b"
+									},
+									{
+										"workMatterNumber": "$807,137 + $194,973 = RWC of $1,002,110",
+										"ID": "e0586c1d-df99-4b48-8e43-bd616220d333"
+									},
+									{
+										"ID": "39ce714f-d423-4e56-8ef8-e8e283bdf52d",
+										"name": "Updated Claim Report",
+										"specialTrackingGroup": "10014",
+										"workMatterNumber": "WM000001474",
+										"description": "Brownell & Dauterive and action plan",
+										"adjuster": "15303",
+										"dateCreated": "2013-09-09 14:06:00.0000000",
+										"status": "True",
+										"workMatterType": "10002"
+									},
+									{
+										"ID": "58c83e2b-a6c1-4b30-a208-e9b1f11bf26e",
+										"name": "City of NB -Reallocating Exp w/i Limit Reserves",
+										"specialTrackingGroup": "10012",
+										"workMatterNumber": "WM000002182",
+										"description": "City of NB -Reallocating Exp w/i Limit Reserves",
+										"adjuster": "11606",
+										"executiveSummary": "Reallocating reserves upon transition to Guidewire... prior assessment still pertinent: ",
+										"dateCreated": "2013-09-09 14:41:00.0000000",
+										"status": "True",
+										"workMatterType": "10002"
+									},
+									{
+										"workMatterNumber": "City of NB Matter:",
+										"ID": "a59383b2-f665-48e7-872b-5739c6bf9f18"
+									},
+									{
+										"workMatterNumber": "Defense evaluates remaining budget needs of 80K. Our share 44% or $35,200.",
+										"ID": "e8b8899b-376b-4e6a-96d6-6887ffdee57f"
+									},
+									{
+										"workMatterNumber": "The demand is $250,000, however both the lead carrier and US Fire are maintaining a defense posture at this time as there is no substantiated evidence that Tremco is liable to the City of New Bedford for any loss. Though a nuisance value may be considered if we fail on an MSJ, that is not projected to exceed 25-30K. The current loss reserve is adequate for meeting a nuisance settlement amount up or up to $30,156. Loss Reserves are appropriate based upon the information that we have to date.",
+										"ID": "9bca9cfe-6fbb-4f75-8392-9cc8a9ed69c2"
+									},
+									{
+										"workMatterNumber": "However the defense expenses erode limits and as such the $35,200 must be added to the existing $13,269, for a total loss reserve of $48,469. ",
+										"ID": "75dfbf44-41e5-4103-992f-20ef648ef4e4"
+									},
+									{
+										"workMatterNumber": "Posting appropriate reserve this date.",
+										"ID": "19a5bbcd-2268-41e3-9059-4e7d23747470"
+									},
+									{
+										"workMatterNumber": "Additionally, though the Garcia (BI) matter is to be dismissed there will be some residual billing that will need to be paid from that feature. Existing reserve of 9,716 will likely accomodate the final billing of the Garcia matter. ",
+										"ID": "268a2ff6-c9eb-4b92-bcf9-2372bb511c69"
+									},
+									{
+										"workMatterNumber": "Total reserve all matters: $58,185",
+										"ID": "5dcccd9f-696d-4161-85d8-47dc3d39174e"
+									},
+									{
+										"ID": "4e714808-ca6f-47a0-89f5-be10b23f6475",
+										"name": "Friedrich Metal Products Claim Report",
+										"specialTrackingGroup": "10002",
+										"workMatterNumber": "WM000022444",
+										"description": "Friedrich Metal Products Claim Report",
+										"adjuster": "18104",
+										"executiveSummary": "There are currently 3 suits pending against Friedrich Metal Products Co, Inc. and multiple other parties in New York County, NY.  ",
+										"dateCreated": "2013-09-09 15:26:00.0000000",
+										"status": "True",
+										"workMatterType": "10002"
+									},
+									{
+										"workMatterNumber": "DeMaio: No discovery has taken place, matter is dormant.",
+										"ID": "42afe7b8-930a-42f8-a6fa-783fa872d5a3"
+									},
+									{
+										"workMatterNumber": "Bleeker: DC will dismiss",
+										"ID": "fec2e7e2-ccd8-42bb-804f-92600d64cc41"
+									},
+									{
+										"workMatterNumber": "Lewis: depos on going as of 9/27/16, no PID yet.",
+										"ID": "3b833d62-28af-4e61-b733-67fec7e95d88"
+									},
+									{
+										"workMatterNumber": "TIG accepted defense uder a single policy, 19909570, with effective dates of 03/04/89 to 03/04/90 and $1,000,000/$2,000,000 per occurrence/aggregate limits as well as $1,000,000/$2,000,000 personal and advertising injury/products-completed operations aggregate limits.  Policy 19909570 was subsequently renewed each year, until it expired on March 4, 1993, with the same applicable limits.",
+										"workMatterType": "Friedrich Metal Products Company, Inc. (\"FMP\") is a sheet metal company that creates various products for its clients.  The products allegedly at issue in these claims are ovens sold in the New York City area.  FMP avers that it did not sell asbestos-containing ovens at any time, nor did any ovens contain the brand name of Frierich until 1983.",
+										"adjuster": "TIG accepted defense uder a single policy, 19909570, a CGL policy with effective dates of 03/04/89 to 03/04/90 and $1,000,000/$2,000,000 per occurrence/aggregate limits as well as $1,000,000/$2,000,000 personal and advertising injury/products-completed operations aggregate limits.  Policy 19909570 was subsequently renewed each year, until it expired on March 4, 1993, with the same applicable limits.",
+										"ID": "91d92e29-6211-47db-92f1-ccb66c885fd6"
+									},
+									{
+										"workMatterNumber": "TIG denied defense under another policy, 35001152, a CGL policy with effective dates of 3/4/1993 to 3/4/1994, and $1,000,000/$2,000,000 per occurrence/aggregate limits as well as $1,000,000/$2,000,000 personal and advertising injury/products-completed operations aggregate limits.  Policy 35001152 was renewed for the dates of 3/4/1994 to 3/4/1995.  TIG denied defense under Asbestos Exclusion, LB 17380.",
+										"ID": "e1b5b289-f57f-48db-b8ea-458212005164"
+									},
+									{
+										"workMatterNumber": "Proposed CSA:",
+										"ID": "4b50cfc6-7fb6-4fa4-97fd-72a9ef6d025c"
+									},
+									{
+										"workMatterNumber": "Carrier\tStart Date\tEnd Date\tMonths\t ",
+										"ID": "3ba1fa6d-1b6e-4a69-b650-a20031633e26"
+									},
+									{
+										"workMatterNumber": "TIG\t3/4/1989\t3/4/1990\t12\t ",
+										"ID": "39506661-2f47-415d-9609-ecd90028c487"
+									},
+									{
+										"workMatterNumber": "TIG\t3/4/1990\t3/4/1991\t12\t ",
+										"ID": "7568d693-179e-4174-9782-5682ce9a5a57"
+									},
+									{
+										"workMatterNumber": "TIG\t3/4/1991\t3/4/1992\t12\t ",
+										"ID": "bd58f811-8e2f-4ff7-a444-26d1b0515d90"
+									},
+									{
+										"workMatterNumber": "TIG\t3/4/1992\t3/4/1993\t12\t ",
+										"ID": "c110d18a-694f-4a5a-8e75-a1ca8e999622"
+									},
+									{
+										"workMatterNumber": "Uninsured\t3/4/1993\t3/4/1994\t0\t ",
+										"ID": "564272a9-211e-4755-826a-172a0fd8d773"
+									},
+									{
+										"workMatterNumber": "Uninsured\t3/4/1994\t3/4/1995\t0\t ",
+										"ID": "c5aead6f-88b5-4459-9775-2e53947b45dc"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/1995\t3/4/1996\t12\t ",
+										"ID": "730fc0c1-a9a7-4e53-9d58-2dc1e3d13566"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/1996\t3/4/1997\t12\t ",
+										"ID": "22d48898-c819-45aa-b952-601e3d04d0be"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/1997\t3/4/1998\t12\t ",
+										"ID": "a623d41b-cc15-4912-8750-96848cbb206e"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/1998\t3/4/1999\t12\t ",
+										"ID": "86510fb9-f76a-4292-bcbf-483d5cea2386"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/1999\t3/4/2000\t12\t ",
+										"ID": "7807ea10-58f1-4a3a-8c10-92827cd377d6"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/2000\t3/4/2001\t12\t ",
+										"ID": "b652fc1a-7ee8-4900-a50b-5f683326c1a2"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/2001\t3/4/2002\t12\t ",
+										"ID": "ab9d36c1-f3b7-4f43-b747-585795168400"
+									},
+									{
+										"workMatterNumber": "Utica\t3/4/2002\t3/4/2003\t12\t\t\t\t",
+										"ID": "59ed22ce-410a-4fad-abdf-d97ff3ce6e0d"
+									},
+									{
+										"workMatterNumber": "\t\t\tTotal = 144\t\t\t\t",
+										"ID": "6744b891-d88b-4c0b-9101-f09c65716df8"
+									},
+									{
+										"workMatterNumber": "TIG â 48 months â 33.33%",
+										"ID": "210a63de-d54e-42f6-8330-cf526fad31c0"
+									},
+									{
+										"ID": "29fd4760-d258-4be4-9315-706f87356c11",
+										"name": "Reserves appear adequate at this time. Beeker will be dismissed, there has been no PID to date in Lewis, and DeMaio is dormant. the only possible loss payment appears to be in DeMaio, assuming there is PID evidence. the only settlement was a 32K settlement, and there have been no new filing since the three current cases were filed. ",
+										"specialTrackingGroup": "None at this time",
+										"workMatterNumber": "Utica â 96 months â 66.67%",
+										"adjuster": "The Insured and its agent are unable to identify any coverage prior to 1990.  These cases are in New York, and thus the insured will be responsible for all unisured years for purposes of indemnity.  We, along with the co-carrier Resolute (Utica), are also pushing for possible insured participation in defense costs, but the insured has been unresponsive on this front to date.",
+										"status": "The Insured contends that it never at any time used asbestos in any of its products.  Further, this insured was never before sued in asbestos cases.  This appears, at this time, to be an aberation series of suits.",
+										"workMatterType": "The Insured contends that it never at any time used asbestos in any of its products. Liability on the active suits will be determined as those suits progress. It is most likely they will be dismissed by agreement or summary judgment."
+									},
+									{
+										"workMatterNumber": "DC has billed only $2,898 since the end of 2014. I expect some further billings after the recent Lewis depos, but the current reserves should cover the defense of lewis- minimal work left- and DeMaio. ",
+										"ID": "6d3d7001-8624-432b-b64d-bf845679cb25"
+									},
+									{
+										"workMatterNumber": "I will monitor defense costs and if it appear additional reserves are needed I will request them.",
+										"workMatterType": "1. work with DC to bring 3 existing lawsuits to resolution as efficiently as possible. ",
+										"ID": "c0fc2be0-8283-4776-bd5d-bbe40cbb0149"
+									},
+									{
+										"workMatterNumber": "2. Monitor defense costs and increase reserves if needed;",
+										"ID": "adcf4196-04eb-48e8-aecc-126dabaec4cb"
+									},
+									{
+										"workMatterNumber": "3. If no suits filed in 6 months after settlement of last case, consider closure.",
+										"ID": "926d682b-2bac-498a-90f3-cca69e3b1537"
+									},
+									{
+										"ID": "5018aff8-9de6-49ff-864e-b732c83a562b",
+										"name": "Allied Oil Co. Claim Report",
+										"specialTrackingGroup": "10005",
+										"workMatterNumber": "WM000022503",
+										"description": "Allied Oil Co. Claim Report",
+										"adjuster": "10123",
+										"executiveSummary": "Complaint tendered to CFI directly by the alleged insured, Allied Oil & Tire Company, seeking defense and indemnity.  Complaint filed in Jackson County, Missouri, alleging negligence and strict liability. Plaintiff Wade Wiederhold alleges that he was diagnosed with acute promyelocytic leukemia (ACL) in December 2011. He alleges exposure to benzene and other carcinogenic products in connection with his work for various employers in the trucking and lawn and garden businesses between 1988 and 2000. He claims that these exposures were a legal cause of his APL.  He makes no specific allegations against Allied Oil.  Kathy Blessing, Benefits Coordinator at Allied Oil & Tire Co, informs that Allied hired outside defense counsel, who succeeded in having the claim dismissed against Allied.  ",
+										"dateCreated": "2013-09-09 15:22:00.0000000",
+										"status": "True",
+										"workMatterType": "10002"
+									},
+									{
+										"workMatterNumber": "Allied Oil has since been dismissed from the action.  There is an outstanding defense expense bill for $4,421.64, for which U.S. Fire has accepted a 20.9% share, totalling $922.78.",
+										"ID": "a11e65a2-77af-4921-b336-6e98fa6634f3"
+									},
+									{
+										"workMatterNumber": "CFI accepted defense in this matter under five GL policies:",
+										"ID": "8376f8e2-efc7-492b-b915-b6ed4fbdf749"
+									},
+									{
+										"workMatterNumber": "543024611\t01/01/1988 to 01/01/1989\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "b34058be-bfb1-458f-a93d-3f976540254b"
+									},
+									{
+										"workMatterNumber": "543024659\t01/01/1989 to 01/01/1990\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "bf37b370-ac16-46c8-97d7-31c7d0823727"
+									},
+									{
+										"workMatterNumber": "543024456 \t01/01/1990 to 01/01/1991\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "105e1b7b-11ec-48a3-b2d8-9a61e01a8b3d"
+									},
+									{
+										"workMatterNumber": "503156055           06/01/1997 to 06/01/1998   $1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "3a51a785-057e-46a1-bc12-d33e2c3bfbc0"
+									},
+									{
+										"workMatterNumber": "5031623709\t06/01/1998 to 06/01/1999\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"workMatterType": "Allied Oil & Tire Company, formerly known as Allied Oil & Supply, Inc., began in 1958 selling oil, lubricants, and truck tires.",
+										"adjuster": "CFI has accepted defense of Allied in this matter under five CGL policies:",
+										"ID": "22107165-252b-4c0b-bd4e-55c5de7b97f7"
+									},
+									{
+										"workMatterNumber": "543024611\t01/01/1988 to 01/01/1989\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "841b662a-6ae2-428e-8dbc-36bd028cf518"
+									},
+									{
+										"workMatterNumber": "543024659\t01/01/1989 to 01/01/1990\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "152c17ee-8fea-42ad-a842-970a791ea4d4"
+									},
+									{
+										"workMatterNumber": "543024456 \t01/01/1990 to 01/01/1991\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "87575694-795c-48fd-bfe3-b64d1ead1e4f"
+									},
+									{
+										"workMatterNumber": "503156055           06/01/1997 to 06/01/1998   $1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "ad55d285-5c16-4134-8338-24c402d378a8"
+									},
+									{
+										"workMatterNumber": "5031623709\t06/01/1998 to 06/01/1999\t$1,000,000 occurrence/$2,000,000 prod comp ops agg",
+										"ID": "09162e6e-071f-457d-9286-d06833fb31f2"
+									},
+									{
+										"workMatterNumber": "CFI denied defense of Allied under two commercial umbrella policies:",
+										"ID": "deb02fc5-891e-47d0-8c77-b5db7122ef91"
+									},
+									{
+										"workMatterNumber": "553050761\t06/01/1997 to 06/01/1998\t$10,000,000 occurrence/ $10,000,000 agg. above $1,000,000 per occurrence/ $2,000,000 aggregate retained limit",
+										"ID": "99df09cf-c363-48d7-9f08-d40faf449a63"
+									},
+									{
+										"workMatterNumber": "553050761\t01/01/1991 to 01/01/1992\t$5,000,000 per occurrence/ $5,000,000 prod. comp ops agg limits above $1,000,000 per occurrence/$2,000,000 aggregate retained limit",
+										"ID": "b8c7861d-9784-46c4-85da-95701bcc1f53"
+									},
+									{
+										"ID": "a7aeb43f-9b95-4a88-b3b1-c102ce0a6f2b",
+										"name": "I set expense reserves at CFI's share of the outstanding defense bills, $922.78.  As the suit is dismissed and there are no other claims, this is appropriate.",
+										"workMatterNumber": "CFI denied under the umbrella policies for lack of exhaustion with a complete ROR",
+										"adjuster": "None at this time.  Case was dismissed against Allied.",
+										"dateCreated": "-Finalize cost share agreement",
+										"status": "None at this time.  Case was dismissed against Allied.",
+										"workMatterType": "None at this time.  Case was dismissed against Allied."
+									},
+									{
+										"workMatterNumber": "-Pay outstanding defense bill",
+										"ID": "21c20bd6-1484-40e2-b232-76909d5c63bb"
+									},
+									{
+										"workMatterNumber": "-Close work matter",
+										"ID": "2e2ee30e-107a-4ed0-897c-eeeb9acfa785"
+									},
+									{
+										"ID": "48e93806-8712-44fa-ad0e-9a19977e6620",
+										"name": "Claim Report Draft",
+										"specialTrackingGroup": "10014",
+										"workMatterNumber": "WM000000080",
+										"description": "Working Claim Report Draft",
+										"adjuster": "15303",
+										"executiveSummary": "Davis Oil Company (\"Davis\") was named as a defendant in four lawsuits pending in Louisiana alleging that Davis' oil and gas exploration caused damages to plaintiff's real property.  Davis was recently dismissed from the C.B. McCauley lawsuit based on Davis' Peremptory Challenges.  ",
+										"dateCreated": "2013-09-09 15:02:00.0000000",
+										"status": "True",
+										"workMatterType": "10002"
+									},
+									{
+										"workMatterNumber": "Sphere Drake Insurance Company (\"SDI\") is participating in the defense of Davis in the three lawsuits under three primary policies issued to Davis for the period of June 1, 1993 to June 1, 1996 with each policy providing $1 million combined single limits.  SDI is defending each of the three lawsuits under a full reservation of rights and defenses.  ",
+										"ID": "72813e2d-1730-49b1-8638-a3ab43f9a4e8"
+									},
+									{
+										"workMatterNumber": "SDI denied current defense and indemnity obligations to Davis under three excess policies issued to davis for the period of June 1, 1993 to June 1, 1996 with two policies providing $1 million combined limits excess of $1 million and one policy providing $5 million single imits excess of $1 million.  SDI also denied coverage under five policies issued to Davis.",
+										"workMatterType": "Davis is a Colorado general partnership that was formed January 1, 1960 by Marvin Davis, Jack Davis and Jean Davis.  The Colorado partnership suceeded a New York partnership of the same name upon Marvin Davis moving his residence from New York to Colorado.  Davis was engaged in oil and gas exploration and development activities for approximately 46 years until Davis' oil and gas assets were sold in 2006.   Davis asserts that, for all practical purposes, Davis is no longer an active partnership, and its present assets are negligible.  The partnership has not been formaly dissolved.",
+										"adjuster": "SDI issued 3 primary policies to Davis for the period of 6/1/1993 to 6/1/1996.  Policies JHB 30294, JHB 50279 and JHB 40335, effective from 6/1/93 to 6/1/96 provide $1 million combined single limits.  Policies JHB 30294, JHB 50279 and JHB 40335 contain a total pollution exclusion, but also contain an exception for damages caused by saline substance contamination which has been alleged in all three lawsuits.  SDI is defending and has historically paid a 20% share of defense costs.",
+										"ID": "4198e0b2-fd70-4a47-b00e-86bfa5a32f46"
+									},
+									{
+										"workMatterNumber": "SDI issued policy JHB30315, effective 6/1/93 to 6/1/94 and JHB40338, effective 6/1/1994 to 6/1/1995.  Policy JHB30315 provides Operator's Extra Exepnse Indemnity coverage; Care, Custody and Control coverage, and Outer Continental Shelf Lands Act Indemnity coverage.  Policy JHB 40338 provides Control of Well coverage.  ",
+										"ID": "6c305a42-8a1d-4151-a2d6-598fc9d90e82"
+									},
+									{
+										"workMatterNumber": "SDI also issued six excess policies for the periods from 6/1/93 to 6/1/96.  Policies JHB30293 and JHB40336 provide $1 million total combined limits excess of $1 million.  Policy JHB 00287 provides $5 million total combined limit excess of $1 million.  Policy JHB40337 is a claims made policy that provides $10 million single combined limits excess of $2 million.  Policies HOO002498 and HOO002499 provide $1.5 million single combined limits excess of $5 million and $1 million, respectively, and contain a pollution exclusion.",
+										"workMatterType": "Plaintiffs in all three lawsuits allege that Davis' oil and gas operations casued contamination to plaintiffs' real property and associated damages.  Plaintiffs filed essentially the same complaint alleging negligence and violation of state environmental regulations and statutes primarily using a strict liability standard.",
+										"ID": "36397b2b-72a6-463c-8b56-584dad34926c"
+									},
+									{
+										"workMatterNumber": "The C.B. McCauley v. BP America lawsuit was dismissed on September 23, 2013. The Court granted Davis'  Davis filed Exceptions of no right of action.  According to defense counsel, it is possible that BP America could file a Third-Party Complaint against Davis, but there has been no indication of that yet.",
+										"workMatterType": "Plaintiffs in all three suits have asserted non-specific allegations that the defendants' operations caused the release of hazardous substances into the soil and groundwater at the plaintiffs' real property causing damage to the real property and economic damages to the plaintiffs.  Each lawsuit alleges contamination caused by saline and other pollutants.  ",
+										"ID": "4fc57098-014c-4f4f-ae34-79b1365f711a"
+									},
+									{
+										"workMatterNumber": "The Heloise plaintiffs have recently tendered a settlement demand of $4.75 million plus the costs of remediation.  The Heloise plaintiffs' demand indicated that they will soon begin environmental sampling and site evaluation.  Damages in the Heloise lawsuit are currently undetermined.  Although the suit alleges damages caused by saline substances, we believe other non-covered pollutants are also involved.",
+										"ID": "665420a7-71be-419d-bf0f-8ecfd42d81e7"
+									},
+									{
+										"workMatterNumber": "We are awaiting damages documentation for our review and analysis.  Site evaluation has not been completed at any of the three sites.",
+										"workMatterType": "By coverage analysis letters, SDI agreed to participate, with Davis' other insurers, in the defense of Davis in these three suits under policies JHB40335, JHB50279 and JBH30294.  Additionally, under separate coverage analysis letters, SDI advised that excess policies JHB30293, JHB00287 and JHB40336 do not provide defense coverage and that no indemnity obligation has not been triggered as there is no evidence of exhaustion of the underlying coverage by payment of covered claims. ",
+										"ID": "cc9d9c0e-5fb0-43be-82f2-26ea278ff21a"
+									},
+									{
+										"workMatterNumber": "SDI denied coverage under policies HOO002498 and HOO002499 (pollution exclusions), JHB30315 and JHB40038 (no coverage for alleged damages), and JHB40337 (claims made policy).",
+										"ID": "bdb60db5-bef4-4521-81c7-8fa10ef0f457"
+									},
+									{
+										"ID": "58130720-5029-494a-a54e-aa018a4a00bb",
+										"specialTrackingGroup": "The extent of contamination is unknown at this time.",
+										"workMatterNumber": "The SDI policies contain a pollution exclusion",
+										"adjuster": "1. Obtain liability and damages documentation for all three suits.",
+										"workMatterType": "Potential exposure is unknown at this time because site investigation and evaluation has not occurred.  We will continue to investigate and evaluate exposure when we receive information."
+									},
+									{
+										"workMatterNumber": "2. Update our evaluation as approrpiate.",
+										"ID": "3761b737-abf8-4f31-a7c1-3d13bceb9e72"
+									},
+									{
+										"workMatterNumber": "3. Update our coverage analysis as appropriate.",
+										"ID": "5069a6ac-7cdd-4c61-8f99-6f295973b904"
+									},
+									{
+										"workMatterNumber": "4. If coverage analysis concludes that the SDI policies do not provide coverage, issue a supplemental coverage analysis withdrawing SDI's participation in the defense of all three suits and decline coverage.",
+										"ID": "cea0ef23-2079-49c8-ac10-8d64daa65b20"
+									},
+									{
+										"workMatterNumber": "5. If coverage analysis concludes that damages do not involve saline contamination, issue a supplemental coverage analysis withdrawing SDI's participation in the defense of all three suits and decline coverage.",
+										"ID": "fb7340d9-ed3f-46ee-b3b8-72f36cc0d295"
+									},
+									{
+										"ID": "1454a126-5554-40cf-a101-3dff97feb607",
+										"name": "Altantic Plumbing Supply Claim Report",
+										"specialTrackingGroup": "10002",
+										"workMatterNumber": "WM000000873",
+										"description": "Atlantic Plumbing Supply Claim Report",
+										"adjuster": "13316",
+										"coverageDescription": "INSURED NAME\tPOLICY NO\tEFF. DATE\tEXP. / CAN.\tLAYER SHARE\tTOTAL LAYER\tATTACH POINT",
+										"executiveSummary": "CFI is currently defending insured Atlantic Plumbing Supply against a series of asbestos cases alleging exposure to asbestos containing products in New Jersey.  CFI is defending under three policies, 518-500187-1 and 503-518993-2, covering the years 02/20/94 to 02/20/97, subject to a complete reservation of rights.  CSI has denied coverage for both defense and indemnity under three other policies, 518-500091-7, 518-502978-9, and 503-178414-3, because these policies each contain an Absolute Asbestos Exclusion. There are currently 2 active suits,  Auth and Dunn.  Defense counsel is working with all co-carriers to defend the suits. Atlantic Plumbing is generally not identified in the suits and, most of the time, is dismissed on summary judgment.  Atlantic currently pays a 29.27% share of costs with other co-carriers.",
+										"dateCreated": "2013-09-09 15:07:00.0000000",
+										"status": "True",
+										"insured": "Atlantic Plumbing Supply Corp. (\"Corp\") was formed in 1983 to purchase Atlantic Plumbing Supply located in Long Branch, NJ which had been in business 50+ years prior to the sale. Plaintiffs allege injury from exposure to asbestos and/or asbestos containing products at various sites in NJ from the 1950's to the 1980's.",
+										"workMatterType": "10002"
+									},
+									{
+										"workMatterNumber": "ATLANTIC PLUMBING SUPPLY (ab excl)503178414      \t2/20/1999\t2/20/2000\t1,000,000\t1,000,000\t0.00",
+										"ID": "5ed3d9da-d501-474c-a8dd-5d7574551a85"
+									},
+									{
+										"workMatterNumber": "ATLANTIC PLUMBING SUPPLY \t503518993      \t2/20/1995\t2/20/1996\t1,000,000\t1,000,000\t0.00",
+										"ID": "a51f4b54-1023-4a5a-b29e-309fa968ca32"
+									},
+									{
+										"workMatterNumber": "ATLANTIC PLUMBING SUPPLY \t503518993      \t2/20/1996\t2/20/1997\t1,000,000\t1,000,000\t0.00",
+										"ID": "1229c429-7e41-47fb-8cf5-6093c8afa5b8"
+									},
+									{
+										"workMatterNumber": "ATLANTIC PLUMBING SUPPLY (ab excl)518500091      \t2/20/1993\t2/20/1994 (ab exc)\t1,000,000\t1,000,000\t0.00",
+										"ID": "fc556b4c-3605-4e42-a59a-5323405cee7f"
+									},
+									{
+										"workMatterNumber": "ATLANTIC PLUMBING SUPPLY\t518500187      \t2/20/1994\t2/20/1995\t1,000,000\t1,000,000\t0.00",
+										"ID": "e544e44b-31f5-46e0-a51b-323ea1110bfc"
+									},
+									{
+										"workMatterNumber": "ATLANTIC PLUMBING SUPPLY(ab excl)\t518502978      \t2/20/1997\t2/20/1998\t1,000,000\t1,000,000\t0.00",
+										"ID": "c3954656-cd6e-4bea-9f6c-2034fe91e80f"
+									},
+									{
+										"workMatterNumber": "10/31/83 to 10/31/86 - AIG",
+										"ID": "5dbf0952-1be1-43e7-b5db-954d5785a9f2"
+									},
+									{
+										"workMatterNumber": "10/31/86 to 11/15/86 - Unknown",
+										"ID": "1ab50fd2-5447-49a6-8887-07fd45128642"
+									},
+									{
+										"workMatterNumber": "11/15/86 to 11/15/88 - Fireman's Fund",
+										"ID": "49bc0b32-8604-43ab-b908-a2114bb3e0b0"
+									},
+									{
+										"workMatterNumber": "11/15/88 to 11/15/89 â Kemper/Lumbermanâs",
+										"ID": "79731f32-a8c1-4f24-92f7-a59cad2296e1"
+									},
+									{
+										"workMatterNumber": "11/15/89 to 02/20/91 - CNA",
+										"ID": "a7f3746a-090f-4950-aa0a-33438302572d"
+									},
+									{
+										"workMatterNumber": "02/20/91 to 02/20/92 - American National Fire Ins. Co. (Great American â Managed by Liberty Mutual))",
+										"ID": "08a855e3-60cb-40ff-8a19-7f7a2d54c3c5"
+									},
+									{
+										"workMatterNumber": "02/20/92 to 02/20/93 - unknown",
+										"ID": "bd34ba9e-2617-453d-89cc-c6d5f77e202f"
+									},
+									{
+										"workMatterNumber": "02/20/94 to 02/20/97 - North River (Crum & Forster) ",
+										"ID": "cb7c2fbb-e9cf-48c0-bb21-724700f07303"
+									},
+									{
+										"workMatterNumber": "02/20/97 to 02/20/01 - Unknown",
+										"ID": "5b4d3c69-7ce8-46b6-80a6-d0b91f50a22b"
+									},
+									{
+										"workMatterNumber": "02/20/01 to 02/20/10 - Peerless (asbestos exclusions)",
+										"ID": "f762b4a6-4ddc-4b4e-ab3c-2aff14cccf40"
+									},
+									{
+										"workMatterNumber": "02/20/10 to 02/20/11 - Unknown (assumed asbestos exclusion)",
+										"ID": "74be7c59-759e-4c31-bcc4-0897db28e7d0"
+									},
+									{
+										"workMatterNumber": "02/20/11 to 02/20/12 - Peerless (asbestos exclusion)",
+										"workMatterType": "Our key to the investigation and discovery is to see if there is product ID on our insured. Insured, Atlantic Plumbing Supply Corp. (\"Corp\") was formed in 1983 to purchase Atlantic Plumbing Supply located in Long Branch, NJ.   Atlantic Plumbing Supply had been in business for 50+ years prior to being sold.  At the time of the purchase Corp purchased the inventory under an \"asset-purchase agreement\" Corp. did not purchase customer lists or accounts receivable.  They did not assume any debts or obligations of Atlantic Plumbing Supply.  Atlantic Plumbing and Corp were identical; they were in the business of distributing plumbing supplies.  Corp. kept two employees of Atlantic Plumbing Supply on the payroll, the bookkeeper and a warehouseman.  There was no 'goodwill\" purchased.  Atlantic Plumbing Supply had a few old customers and they were preparing to shut down so there was little \"good will\".  Corp. advised the only asbestos products which it may have purchased as part of the sales agreement would have been a small amount of transite pipe and it believes it was subsequently thrown out.",
+										"ID": "04de647d-930d-43a7-9f29-ed4b88bb03c9"
+									},
+									{
+										"ID": "ef70129f-7fec-4ef1-a597-de1ba5b3df1b",
+										"specialTrackingGroup": "no known coverage issues at present.",
+										"workMatterNumber": "NJ product line exception rule. Successor liability if the successor purchases a substantial part of the manufacturerâs assets and continues to market goods in the same product line. Atlantic Plumbing continued in same business of supplying plumbing products; product lien exception likely.  We continue to defend.",
+										"adjuster": "We continue to monitor the investigation/discovery on these claims. The number of incoming claims have gone down.  In 2003 the number of new claims was 19, in 2004 it went up to 29, but in 2005 the numbers decreased to 12.  As of 2006 there were 67 pending claims.  The trend has continued, and there are currently only 4 claims, one of which was filed in 2013.",
+										"workMatterType": "plaintiffs have alleged personal innury as a result of exposure to insured allegedly asbestos containing products."
+									},
+									{
+										"workMatterNumber": "PAUL AUTH v. ATLANTIC PLUMBING SUPPLY CORP. product id in plaintiff depo, however DC will file s/j motion based on asset only purchase agreement produced in discovery. DC does not anticipate an opposition but states it is possible.",
+										"ID": "d481ca1e-c21f-446c-8133-d3bc63282e91"
+									},
+									{
+										"workMatterNumber": "MARYANN DUNN, Executrix to the Estate of ROBERT DUNN v. ATLANTIC PLUMBING SUPPLY CORP., Case No. 793-93308 -awaiting cmc and once it is conducted discovery including depos will commence",
+										"workMatterType": "Loss reserves currently stand at 11,394.80. This appears reasonable to me at this time as there are currently only 2 pending claims and the average indemnity payment is $396. The most recent four settlements (dating back to 12/12/11) total $12,000. Our share of those settlements was $2,918.40 and our average payment for the four settlements was $729.60. Accordingly, a reserve increase is not necessary at this time.",
+										"ID": "76f84708-62d8-4f4f-b6f8-71349ccd0772"
+									},
+									{
+										"workMatterNumber": "Expense reserves are currently set at $17,000.  CFI's 24.32% share of defense costs for this matter were $21,611 for the period of August 2011 through January of 2013, a period of about 17 months.  For now, the expense reserves seem adequate, but we must monitor defense counsel's bills and ensure that they are as effificent as possible.  Additionally, the recent increase of CFI's share to 29% based on the Lumberman's liquidation may result in higher fees going forward.  This increase, however, is likely offset by the reduction in cases going forward.",
+										"workMatterType": "- Monitor AB claims with DC and push for efficient resolution",
+										"ID": "6cba2c85-2fdc-4a6f-8613-514dfaf01b8b"
+									},
+									{
+										"workMatterNumber": "- Monitor expense reserves and push for more efficient billing from DC",
+										"ID": "c632689d-9acb-490c-bb6b-2e6f2402c073"
+									},
+									{
+										"workMatterNumber": "- Continue to update claim trends and re-evaluate reserves as new information is received",
+										"ID": "0084ce2b-904d-4543-8ef8-a427514c22bd"
+									},
+									{
+										"ID": "ed239bd9-7d09-46f3-9112-76779dbfc103",
+										"name": "Evalutation",
+										"specialTrackingGroup": "10008",
+										"workMatterNumber": "WM000022220",
+										"description": "Reserve increase to pay final defense bill reimbursement",
+										"adjuster": "9506",
+										"dateCreated": "2013-09-10 10:32:00.0000000",
+										"status": "True",
+										"workMatterType": "10002"
+									}
+								],
+								"schema": {
+									"workMatterNumber": "string",
+									"workMatterType": "string",
+									"specialTrackingGroup": "string",
+									"adjuster": "string",
+									"status": "string",
+									"name": "string",
+									"dateCreated": "string",
+									"description": "string",
+									"executiveSummary": "string",
+									"insured": "string",
+									"contacts": "string",
+									"coverageDescription": "string",
+									"liabilityIssues_analysis": "string",
+									"damagesIssues_analysis": "string",
+									"coverageIssues_Analysis": "string",
+									"exposure_volatility": "string",
+									"claimEvaluation_reserveAnalysis": "string",
+									"strategy_NextSteps": "string",
+									"ID": "string"
+								}
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"workMatterNumber"
+									],
+									"seriesFieldKeys": [
+										"workMatterNumber"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
 			},
 			"kernelspec": {
 				"name": "synapse_pyspark",
-				"display_name": "python"
+				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "python"
@@ -198,7 +889,7 @@
 					"subDataFrame.Write().Mode(SaveMode.Overwrite).Option(\"header\", true).Csv(adlsPathOutput +\"adjuster2.csv\");\n",
 					""
 				],
-				"execution_count": 38
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -242,7 +933,7 @@
 					"    words.Show();\r\n",
 					""
 				],
-				"execution_count": 40
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
