@@ -275,10 +275,10 @@
 					"%%spark\r\n",
 					"val df =spark.read.format(\"csv\").option(\"header\", \"true\").option(\"sep\", \"|\").load(\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/dbo.cc_claim\") \r\n",
 					"//spark.read.option(\"sep\", \"|\").csv(\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/dbo.cc_claim\")\r\n",
-					"//df.write.mode(\"overwrite\").saveAsTable(\"dbo_cc_claim\")\r\n",
+					"df.write.mode(\"overwrite\").saveAsTable(\"dbo_cc_claim1\")\r\n",
 					"df.printSchema()"
 				],
-				"execution_count": 6
+				"execution_count": 7
 			}
 		]
 	}
