@@ -58,10 +58,10 @@
 				},
 				"source": [
 					"%%spark\n",
-					"spark.sql(\"DROP TABLE IF EXISTS aztblscala\")\n",
-					"spark.sql(\"DROP TABLE IF EXISTS aztbl\")"
+					"spark.sql(\"DROP TABLE IF EXISTS dbo_cc_claim\")\n",
+					""
 				],
-				"execution_count": 2
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -273,11 +273,12 @@
 				},
 				"source": [
 					"%%spark\r\n",
-					"val df = spark.read.option(\"sep\", \"|\").csv(\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/dbo.cc_claim\")\r\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"dbo_cc_claim\")\r\n",
+					"val df =spark.read.format(\"csv\").option(\"header\", \"true\").option(\"sep\", \"|\").load(\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/dbo.cc_claim\") \r\n",
+					"//spark.read.option(\"sep\", \"|\").csv(\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/dbo.cc_claim\")\r\n",
+					"//df.write.mode(\"overwrite\").saveAsTable(\"dbo_cc_claim\")\r\n",
 					"df.printSchema()"
 				],
-				"execution_count": 8
+				"execution_count": 6
 			}
 		]
 	}
