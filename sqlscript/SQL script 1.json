@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [ClaimSK]\n,[Claim_ID]\n,[Claim_No]\n,[Historic_RiverStone_Claim_No]\n,[Client_Claim_No]\n,[TPA_Claim_No]\n,[Archive_Claim_No]\n,[Policy_Period_ID]\n,[Policy_Version]\n,[TPA_CD]\n,[Broker_Claim_Ref_No]\n,[Other_Insured_Name]\n,[Claim_Status_Cd]\n,[Claim_Open_Dt]\n,[Claim_Close_Dt]\n,[Claim_Reopen_Dt]\n,[Date_Of_Loss]\n,[Reported_Date]\n,[Entered_Date]\n,[CC_TRGClaim_ID]\n,[Data_Create_Date]\n,[Data_Create_User]\n,[Data_Update_Date]\n,[Data_Update_User]\n,[FrameworkPackageInstanceID]\n,[Sys_User_Id]\n,[Sys_Create_Dt]\n,[Sys_User_Update_Id]\n,[Sys_RowStartDt]\n,[Sys_RowEndDt]\n,[TableHashValue]\n,[Source_System_Cd]\n FROM [default].[dbo].[clm_claim]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "Built-in",
+				"databaseName": "default"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -21,6 +21,13 @@
 		},
 		"metadata": {
 			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"kernelspec": {
+				"name": "synapse_sparkdotnet",
+				"display_name": "csharp"
+			},
 			"language_info": {
 				"name": "csharp"
 			},
@@ -44,6 +51,11 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "scala"
+					}
+				},
 				"source": [
 					"%%spark\n",
 					"spark.sql(\"DROP TABLE IF EXISTS aztblscala\")\n",
@@ -53,6 +65,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "scala"
+					}
+				},
 				"source": [
 					"%%spark\n",
 					"val df = spark.read.option(\"header\",true).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
@@ -64,6 +81,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
@@ -102,6 +122,9 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"microsoft": {
+						"language": "csharp"
+					},
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
@@ -153,6 +176,9 @@
 				"cell_type": "code",
 				"metadata": {
 					"outputCollapsed": true,
+					"microsoft": {
+						"language": "sparksql"
+					},
 					"diagram": {
 						"activateDiagramType": 1,
 						"chartConfig": {
@@ -182,6 +208,11 @@
 			},
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "scala"
+					}
+				},
 				"source": [
 					"%%spark\n",
 					"val df = spark.sql(\"SELECT * FROM aztblscala WHERE LOCATION = 'NEW HAMPSHIRE'\") \n",

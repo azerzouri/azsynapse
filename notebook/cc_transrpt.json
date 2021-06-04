@@ -62,13 +62,13 @@
 					"## If header exists uncomment line below\r\n",
 					", header=True\r\n",
 					")\r\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"clm.Claim\")\r\n",
+					"df.write.mode(\"overwrite\").saveAsTable(\"clm_Claim\")\r\n",
 					"\r\n",
 					"\r\n",
 					"##display(df.limit(10))\r\n",
 					"df.printSchema()"
 				],
-				"execution_count": 1
+				"execution_count": 3
 			}
 		]
 	}
