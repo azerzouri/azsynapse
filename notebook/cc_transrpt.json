@@ -69,10 +69,10 @@
 				"source": [
 					"%%spark\r\n",
 					"spark.sql(\"DROP TABLE IF EXISTS clm_claim\")\r\n",
-					"spark.sql(\"DROP TABLE IF EXISTS claim\")\r\n",
-					"spark.sql(\"DROP TABLE IF EXISTS exposure\")"
+					"spark.sql(\"DROP TABLE IF EXISTS clm.claim\")\r\n",
+					"spark.sql(\"DROP TABLE IF EXISTS clm.exposure\")"
 				],
-				"execution_count": 35
+				"execution_count": 38
 			},
 			{
 				"cell_type": "code",
@@ -119,7 +119,7 @@
 					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
 					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {tables} USING PARQUET LOCATION '{loc}'\")"
 				],
-				"execution_count": 36
+				"execution_count": 39
 			}
 		]
 	}
