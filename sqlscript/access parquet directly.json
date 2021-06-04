@@ -2,7 +2,7 @@
 	"name": "access parquet directly",
 	"properties": {
 		"content": {
-			"query": "SELECT \n    TOP 100 *\nFROM OPENROWSET(\n    BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/clm.Claim.parquet',\n    FORMAT='PARQUET'\n) AS [result]",
+			"query": "CREATE EXTERNAL TABLE clm.Claim\nWITH (\n    LOCATION = 'trg@e2nprdadls01.dfs.core.windows.net/',\n    DATA_SOURCE = transdatapool,  \n    FILE_FORMAT = transdatapoolFormat\n)  \nAS\nSELECT \n    TOP 100 *\nFROM OPENROWSET(\n    BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/*.parquet',\n    FORMAT='PARQUET'\n) AS [result]\nGO\n-- you can query the newly created external table\nSELECT * FROM clm.Claim",
 			"metadata": {
 				"language": "sql"
 			},
