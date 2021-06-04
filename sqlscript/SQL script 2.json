@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT \n    TOP 100 *\nFROM OPENROWSET(\n    BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/clm.Claim.parquet',\n    FORMAT='PARQUET'\n) AS [result]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "Built-in",
+				"databaseName": "default"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
