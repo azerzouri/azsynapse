@@ -2,13 +2,13 @@
 	"name": "access parquet directly",
 	"properties": {
 		"content": {
-			"query": "CREATE EXTERNAL TABLE clm.Claim\nWITH (\n    LOCATION = 'trg@e2nprdadls01.dfs.core.windows.net/',\n    DATA_SOURCE = transdatapool,  \n    FILE_FORMAT = transdatapoolFormat\n)  \nAS\nSELECT \n    TOP 100 *\nFROM OPENROWSET(\n    BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/*.parquet',\n    FORMAT='PARQUET'\n) AS [result]\nGO\n-- you can query the newly created external table\nSELECT * FROM clm.Claim",
+			"query": "CREATE EXTERNAL TABLE clm.Claim\nWITH (\n    LOCATION = 'trg@e2nprdadls01.dfs.core.windows.net/',\n    DATA_SOURCE = transdatapool,  \n    FILE_FORMAT = transdatapoolFormat)  \nAS\nSELECT \n   *\nFROM \nOPENROWSET(BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/clm.Claim.parquet', \nFORMAT='PARQUET') AS [result]\nGO\n-- you can query the newly created external table\nSELECT * FROM clm.Claim",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"poolName": "Built-in",
-				"databaseName": "default"
+				"poolName": "azadxsqlpool",
+				"databaseName": "azadxsqlpool"
 			},
 			"resultLimit": -1
 		},
