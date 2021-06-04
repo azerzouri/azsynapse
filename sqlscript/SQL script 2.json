@@ -2,7 +2,7 @@
 	"name": "SQL script 2",
 	"properties": {
 		"content": {
-			"query": "SELECT \n     *\nFROM \nOPENROWSET(BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/*.parquet', \nFORMAT='PARQUET') AS [result]",
+			"query": "SELECT \n  top 10 *\nFROM \n    OPENROWSET(BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/clm.Claim.parquet'\n    ,FORMAT='PARQUET'\n    ) AS [result]",
 			"metadata": {
 				"language": "sql"
 			},
