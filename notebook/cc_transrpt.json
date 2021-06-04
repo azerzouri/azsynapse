@@ -75,7 +75,7 @@
 					"spark.sql(\"DROP TABLE IF EXISTS claim\")\r\n",
 					"spark.sql(\"DROP TABLE IF EXISTS exposure\")"
 				],
-				"execution_count": 6
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
@@ -122,7 +122,7 @@
 					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}\"\r\n",
 					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {tables} USING PARQUET LOCATION '{loc}'\")"
 				],
-				"execution_count": 3
+				"execution_count": 1
 			}
 		]
 	}
