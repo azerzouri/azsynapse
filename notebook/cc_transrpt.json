@@ -114,12 +114,12 @@
 					"%%pyspark\r\n",
 					"from pyspark.sql.functions import *\r\n",
 					"\r\n",
-					"src_name = ['clm.Claim','clm.Exposure']\r\n",
+					"src_name = ['Claim','Exposure']\r\n",
 					"for tables in src_name:\r\n",
-					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
-					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {tables} USING PARQUET LOCATION '{loc}'\")"
+					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/clm.{tables}.parquet\"\r\n",
+					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS clm_{tables} USING PARQUET LOCATION '{loc}'\")"
 				],
-				"execution_count": 39
+				"execution_count": 5
 			}
 		]
 	}
