@@ -69,6 +69,7 @@
 				"source": [
 					"%%pyspark\r\n",
 					"from pyspark.sql.functions import *\r\n",
+					"\r\n",
 					"def slicer(my_str,sub):\r\n",
 					"   index=my_str.find(sub)\r\n",
 					"   if index !=-1 :\r\n",
