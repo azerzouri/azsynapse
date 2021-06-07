@@ -26,7 +26,7 @@
 			},
 			"kernelspec": {
 				"name": "synapse_sparkdotnet",
-				"display_name": "csharp"
+				"display_name": "Synapse SparkDotNet"
 			},
 			"language_info": {
 				"name": "csharp"
@@ -280,6 +280,72 @@
 					"df.printSchema()"
 				],
 				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"import sys, os\r\n",
+					"import pandas as pd\r\n",
+					"\r\n",
+					"mylist = []\r\n",
+					"root = \"e2nprdadls01.core.windows.net/trg/synapse/cc_TransParq/parquet/\"\r\n",
+					"path = os.path.join(root, \"trg\") \r\n",
+					"\r\n",
+					"for path, subdirs, files in os.walk(path):\r\n",
+					"    for name in files:\r\n",
+					"        mylist.append(os.path.join(path, name))\r\n",
+					"\r\n",
+					"\r\n",
+					"df = pd.DataFrame(mylist)\r\n",
+					"print(df)"
+				],
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"        \r\n",
+					"from pyspark.dbutils import DBUtils\r\n",
+					"dbutils = DBUtils(spark)\r\n",
+					"    \r\n",
+					"files = dbutils.fs.ls('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet')\r\n",
+					"\r\n",
+					"for fi in files: \r\n",
+					"  print(fi.path)"
+				],
+				"execution_count": 17
 			}
 		]
 	}
