@@ -130,7 +130,7 @@
 					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
 					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {slicer(tables,'.')} USING PARQUET LOCATION '{loc}'\")"
 				],
-				"execution_count": 12
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
