@@ -251,6 +251,35 @@
 					"slicer(s,'egg')"
 				],
 				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.read.option(\"delimiter\", \"|\").load('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/clm.Claim.parquet', format='parquet'\r\n",
+					"## If header exists uncomment line below\r\n",
+					", header=True\r\n",
+					")\r\n",
+					"df.write.mode(\"overwrite\").saveAsTable(\"clm_Claim\")\r\n",
+					"##display(df.limit(10))\r\n",
+					"df.printSchema()"
+				],
+				"execution_count": null
 			}
 		]
 	}
