@@ -123,9 +123,10 @@
 					"   else :\r\n",
 					"         raise Exception('Sub string not found!')\r\n",
 					"####################################\r\n",
+					"\r\n",
 					"src_name = ['clm.Claim','clm.Exposure']\r\n",
 					"for tables in src_name:   \r\n",
-					"    \r\n",
+					"    spark.sql(\"DROP TABLE IF EXISTS {slicer(tables,'.')}\")\r\n",
 					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
 					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {slicer(tables,'.')} USING PARQUET LOCATION '{loc}'\")"
 				],
