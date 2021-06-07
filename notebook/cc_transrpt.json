@@ -75,16 +75,13 @@
 					"spark.sql(\"DROP TABLE IF EXISTS claim\")\r\n",
 					"spark.sql(\"DROP TABLE IF EXISTS exposure\")"
 				],
-				"execution_count": 2
+				"execution_count": 11
 			},
 			{
 				"cell_type": "code",
 				"metadata": {
 					"microsoft": {
 						"language": "python"
-					},
-					"jupyter": {
-						"outputs_hidden": true
 					}
 				},
 				"source": [
@@ -119,13 +116,52 @@
 				"source": [
 					"%%pyspark\r\n",
 					"from pyspark.sql.functions import *\r\n",
-					"\r\n",
-					"src_name = ['clm.Claim.parquet','clm.Exposure.parquet']\r\n",
-					"for tables in src_name:\r\n",
-					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}\"\r\n",
-					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {tables} USING PARQUET LOCATION '{loc}'\")"
+					"def slicer(my_str,sub):\r\n",
+					"   index=my_str.find(sub)\r\n",
+					"   if index !=-1 :\r\n",
+					"         return my_str[1+index:] \r\n",
+					"   else :\r\n",
+					"         raise Exception('Sub string not found!')\r\n",
+					"####################################\r\n",
+					"src_name = ['clm.Claim','clm.Exposure']\r\n",
+					"for tables in src_name:   \r\n",
+					"    \r\n",
+					"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
+					"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {slicer(tables,'.')} USING PARQUET LOCATION '{loc}'\")"
 				],
-				"execution_count": 1
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"from pyspark.sql.functions import *\r\n",
+					"\r\n",
+					"def slicer(my_str,sub):\r\n",
+					"   index=my_str.find(sub)\r\n",
+					"   if index !=-1 :\r\n",
+					"         return my_str[1+index:] \r\n",
+					"   else :\r\n",
+					"         raise Exception('Sub string not found!')\r\n",
+					"s=\"have an egg please\"\r\n",
+					"slicer(s,'egg')"
+				],
+				"execution_count": 10
 			}
 		]
 	}
