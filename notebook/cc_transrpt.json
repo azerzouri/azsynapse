@@ -108,12 +108,37 @@
 					"%%pyspark\r\n",
 					"from pyspark.sql.functions import *\r\n",
 					"\r\n",
-					"src_name = 'sourcetable'\r\n",
-					"spark.sql(\"DROP TABLE IF EXISTS {src_name}\")\r\n",
-					"loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{src_name}.parquet\"\r\n",
-					"spark.sql(f\"CREATE TABLE IF NOT EXISTS {src_name} USING PARQUET LOCATION '{loc}'\")"
+					"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")\r\n",
+					"loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/sourcetable.parquet\"\r\n",
+					"spark.sql(f\"CREATE TABLE IF NOT EXISTS sourcetable USING PARQUET LOCATION '{loc}'\")\r\n",
+					""
 				],
-				"execution_count": 4
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"from pyspark.sql.functions import *\r\n",
+					"\r\n",
+					"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")"
+				],
+				"execution_count": 8
 			}
 		]
 	}
