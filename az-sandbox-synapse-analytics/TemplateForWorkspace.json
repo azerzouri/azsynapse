@@ -538,12 +538,11 @@
 				"metadata": {
 					"saveOutput": true,
 					"synapse_widget": {
-						"version": "0.1",
-						"state": {}
+						"version": "0.1"
 					},
 					"kernelspec": {
 						"name": "synapse_sparkdotnet",
-						"display_name": "csharp"
+						"display_name": "Synapse SparkDotNet"
 					},
 					"language_info": {
 						"name": "csharp"
@@ -560,10 +559,8 @@
 						"sparkVersion": "2.4",
 						"nodeCount": 3,
 						"cores": 4,
-						"memory": 28,
-						"automaticScaleJobs": false
-					},
-					"sessionKeepAliveTimeout": 30
+						"memory": 28
+					}
 				},
 				"cells": [
 					{
@@ -805,6 +802,74 @@
 						],
 						"outputs": [],
 						"execution_count": null
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"import sys, os\r\n",
+							"import pandas as pd\r\n",
+							"\r\n",
+							"mylist = []\r\n",
+							"root = \"e2nprdadls01.core.windows.net/trg/synapse/cc_TransParq/parquet/\"\r\n",
+							"path = os.path.join(root, \"trg\") \r\n",
+							"\r\n",
+							"for path, subdirs, files in os.walk(path):\r\n",
+							"    for name in files:\r\n",
+							"        mylist.append(os.path.join(path, name))\r\n",
+							"\r\n",
+							"\r\n",
+							"df = pd.DataFrame(mylist)\r\n",
+							"print(df)"
+						],
+						"outputs": [],
+						"execution_count": 9
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"        \r\n",
+							"from pyspark.dbutils import DBUtils\r\n",
+							"dbutils = DBUtils(spark)\r\n",
+							"    \r\n",
+							"files = dbutils.fs.ls('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet')\r\n",
+							"\r\n",
+							"for fi in files: \r\n",
+							"  print(fi.path)"
+						],
+						"outputs": [],
+						"execution_count": 17
 					}
 				]
 			},
@@ -812,6 +877,155 @@
 		},
 		{
 			"name": "[concat(parameters('workspaceName'), '/cc_transrpt')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "azSparky",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"synapse_widget": {
+						"version": "0.1"
+					},
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
+					},
+					"language_info": {
+						"name": "python"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/8ad6dfa9-faf9-449e-a7a5-0dc9cda0acf7/resourceGroups/az_sandBox_synapse/providers/Microsoft.Synapse/workspaces/az-sandbox-synapse-analytics/bigDataPools/azSparky",
+						"name": "azSparky",
+						"type": "Spark",
+						"endpoint": "https://az-sandbox-synapse-analytics.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/azSparky",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "2.4",
+						"nodeCount": 3,
+						"cores": 4,
+						"memory": 28
+					}
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": true
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"def slicer(my_str,sub):\r\n",
+							"   index=my_str.find(sub)\r\n",
+							"   if index !=-1 :\r\n",
+							"         return my_str[1+index:] \r\n",
+							"   else :\r\n",
+							"         raise Exception('Sub string not found!')\r\n",
+							"#######################################\r\n",
+							"#######################################\r\n",
+							"\r\n",
+							"src_name = ['clm.Claim','clm.Exposure']\r\n",
+							"for tables in src_name:   \r\n",
+							"    spark.sql(\"DROP TABLE IF EXISTS {slicer(tables,'.')}\")\r\n",
+							"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
+							"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {slicer(tables,'.')} USING PARQUET LOCATION '{loc}'\")"
+						],
+						"outputs": [],
+						"execution_count": 3
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")\r\n",
+							"loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/sourcetable.parquet\"\r\n",
+							"spark.sql(f\"CREATE TABLE IF NOT EXISTS sourcetable USING PARQUET LOCATION '{loc}'\")\r\n",
+							""
+						],
+						"outputs": [],
+						"execution_count": 7
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")"
+						],
+						"outputs": [],
+						"execution_count": 8
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/regressionML')]",
 			"type": "Microsoft.Synapse/workspaces/notebooks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -867,36 +1081,111 @@
 					{
 						"cell_type": "code",
 						"metadata": {
-							"jupyter": {
-								"source_hidden": false,
-								"outputs_hidden": true
-							},
-							"nteract": {
-								"transient": {
-									"deleting": false
-								}
-							},
-							"microsoft": {
-								"language": "python"
-							},
-							"collapsed": true
+							"collapsed": false
 						},
 						"source": [
-							"%%pyspark\r\n",
-							"from pyspark.sql.functions import *\r\n",
-							"def slicer(my_str,sub):\r\n",
-							"   index=my_str.find(sub)\r\n",
-							"   if index !=-1 :\r\n",
-							"         return my_str[1+index:] \r\n",
-							"   else :\r\n",
-							"         raise Exception('Sub string not found!')\r\n",
-							"####################################\r\n",
+							"import matplotlib.pyplot as plt\r\n",
+							"from datetime import datetime\r\n",
+							"from dateutil import parser\r\n",
+							"from pyspark.sql.functions import unix_timestamp, date_format, col, when\r\n",
+							"from pyspark.ml import Pipeline\r\n",
+							"from pyspark.ml import PipelineModel\r\n",
+							"from pyspark.ml.feature import RFormula\r\n",
+							"from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorIndexer\r\n",
+							"from pyspark.ml.classification import LogisticRegression\r\n",
+							"from pyspark.mllib.evaluation import BinaryClassificationMetrics\r\n",
+							"from pyspark.ml.evaluation import BinaryClassificationEvaluator\r\n",
 							"\r\n",
-							"src_name = ['clm.Claim','clm.Exposure']\r\n",
-							"for tables in src_name:   \r\n",
-							"    spark.sql(\"DROP TABLE IF EXISTS {slicer(tables,'.')}\")\r\n",
-							"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
-							"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {slicer(tables,'.')} USING PARQUET LOCATION '{loc}'\")"
+							"\r\n",
+							"from azureml.opendatasets import NycTlcYellow\r\n",
+							"\r\n",
+							"end_date = parser.parse('2018-06-06')\r\n",
+							"start_date = parser.parse('2018-05-01')\r\n",
+							"nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)\r\n",
+							"filtered_df = nyc_tlc.to_spark_dataframe()\r\n",
+							"\r\n",
+							"\r\n",
+							"# To make development easier, faster, and less expensive, downsample for now\r\n",
+							"sampled_taxi_df = filtered_df.sample(True, 0.001, seed=1234)\r\n",
+							"\r\n",
+							"#sampled_taxi_df.show(5)\r\n",
+							"display(sampled_taxi_df)\r\n",
+							"\r\n",
+							"sampled_taxi_df.createOrReplaceTempView(\"nytaxi\")\r\n",
+							"\r\n",
+							"taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount'\\\r\n",
+							"                                , 'tripDistance', 'tpepPickupDateTime', 'tpepDropoffDateTime'\\\r\n",
+							"                                , date_format('tpepPickupDateTime', 'hh').alias('pickupHour')\\\r\n",
+							"                                , date_format('tpepPickupDateTime', 'EEEE').alias('weekdayString')\\\r\n",
+							"                                , (unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('tripTimeSecs')\\\r\n",
+							"                                , (when(col('tipAmount') > 0, 1).otherwise(0)).alias('tipped')\r\n",
+							"                                )\\\r\n",
+							"                        .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\\\r\n",
+							"                                & (sampled_taxi_df.tipAmount >= 0) & (sampled_taxi_df.tipAmount <= 25)\\\r\n",
+							"                                & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\\\r\n",
+							"                                & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\\\r\n",
+							"                                & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 100)\\\r\n",
+							"                                & (sampled_taxi_df.rateCodeId <= 5)\r\n",
+							"                                & (sampled_taxi_df.paymentType.isin({\"1\", \"2\"}))\r\n",
+							"                                )\r\n",
+							"\r\n",
+							"\r\n",
+							"taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'passengerCount'\\\r\n",
+							"                , 'tripDistance', 'weekdayString', 'pickupHour','tripTimeSecs','tipped'\\\r\n",
+							"                , when((taxi_df.pickupHour <= 6) | (taxi_df.pickupHour >= 20),\"Night\")\\\r\n",
+							"                .when((taxi_df.pickupHour >= 7) & (taxi_df.pickupHour <= 10), \"AMRush\")\\\r\n",
+							"                .when((taxi_df.pickupHour >= 11) & (taxi_df.pickupHour <= 15), \"Afternoon\")\\\r\n",
+							"                .when((taxi_df.pickupHour >= 16) & (taxi_df.pickupHour <= 19), \"PMRush\")\\\r\n",
+							"                .otherwise(0).alias('trafficTimeBins')\r\n",
+							"                )\\\r\n",
+							"        .filter((taxi_df.tripTimeSecs >= 30) & (taxi_df.tripTimeSecs <= 7200))\r\n",
+							"# Because the sample uses an algorithm that works only with numeric features, convert them so they can be consumed\r\n",
+							"sI1 = StringIndexer(inputCol=\"trafficTimeBins\", outputCol=\"trafficTimeBinsIndex\")\r\n",
+							"en1 = OneHotEncoder(dropLast=False, inputCol=\"trafficTimeBinsIndex\", outputCol=\"trafficTimeBinsVec\")\r\n",
+							"sI2 = StringIndexer(inputCol=\"weekdayString\", outputCol=\"weekdayIndex\")\r\n",
+							"en2 = OneHotEncoder(dropLast=False, inputCol=\"weekdayIndex\", outputCol=\"weekdayVec\")\r\n",
+							"\r\n",
+							"# Create a new DataFrame that has had the encodings applied\r\n",
+							"encoded_final_df = Pipeline(stages=[sI1, en1, sI2, en2]).fit(taxi_featurised_df).transform(taxi_featurised_df)\r\n",
+							"\r\n",
+							"# Decide on the split between training and testing data from the DataFrame\r\n",
+							"trainingFraction = 0.7\r\n",
+							"testingFraction = (1-trainingFraction)\r\n",
+							"seed = 1234\r\n",
+							"\r\n",
+							"# Split the DataFrame into test and training DataFrames\r\n",
+							"train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, testingFraction], seed=seed)\r\n",
+							"\r\n",
+							"## Create a new logistic regression object for the model\r\n",
+							"logReg = LogisticRegression(maxIter=10, regParam=0.3, labelCol = 'tipped')\r\n",
+							"\r\n",
+							"## The formula for the model\r\n",
+							"classFormula = RFormula(formula=\"tipped ~ pickupHour + weekdayVec + passengerCount + tripTimeSecs + tripDistance + fareAmount + paymentType+ trafficTimeBinsVec\")\r\n",
+							"\r\n",
+							"## Undertake training and create a logistic regression model\r\n",
+							"lrModel = Pipeline(stages=[classFormula, logReg]).fit(train_data_df)\r\n",
+							"\r\n",
+							"## Saving the model is optional, but it's another form of inter-session cache\r\n",
+							"datestamp = datetime.now().strftime('%m-%d-%Y-%s')\r\n",
+							"fileName = \"lrModel_\" + datestamp\r\n",
+							"logRegDirfilename = fileName\r\n",
+							"lrModel.save(logRegDirfilename)\r\n",
+							"\r\n",
+							"## Predict tip 1/0 (yes/no) on the test dataset; evaluation using area under ROC\r\n",
+							"predictions = lrModel.transform(test_data_df)\r\n",
+							"predictionAndLabels = predictions.select(\"label\",\"prediction\").rdd\r\n",
+							"metrics = BinaryClassificationMetrics(predictionAndLabels)\r\n",
+							"print(\"Area under ROC = %s\" % metrics.areaUnderROC)\r\n",
+							"\r\n",
+							"## Plot the ROC curve; no need for pandas, because this uses the modelSummary object\r\n",
+							"modelSummary = lrModel.stages[-1].summary\r\n",
+							"\r\n",
+							"plt.plot([0, 1], [0, 1], 'r--')\r\n",
+							"plt.plot(modelSummary.roc.select('FPR').collect(),\r\n",
+							"         modelSummary.roc.select('TPR').collect())\r\n",
+							"plt.xlabel('False Positive Rate')\r\n",
+							"plt.ylabel('True Positive Rate')\r\n",
+							"plt.show()"
 						],
 						"outputs": [],
 						"execution_count": 1
