@@ -21,9 +21,6 @@
 		},
 		"metadata": {
 			"saveOutput": true,
-			"synapse_widget": {
-				"version": "0.1"
-			},
 			"kernelspec": {
 				"name": "synapse_pyspark",
 				"display_name": "Synapse PySpark"
@@ -139,6 +136,31 @@
 					"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")"
 				],
 				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"from notebookutils import mssparkutils\r\n",
+					" \r\n",
+					"files = mssparkutils.fs.ls('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/')\r\n",
+					" \r\n",
+					"for file in files:\r\n",
+					"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+					"    print(filelist)"
+				],
+				"execution_count": 1
 			}
 		]
 	}
