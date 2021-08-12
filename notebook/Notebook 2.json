@@ -65,33 +65,6 @@
 				},
 				"source": [
 					"%%pyspark\r\n",
-					"from notebookutils import mssparkutils\r\n",
-					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/germancredit.csv'\r\n",
-					"tblname ='germancredit'\r\n",
-					"df = spark.read.csv(filepath)\r\n",
-					"df.write.mode(\"overwrite\").saveAsTable(tblname)"
-				],
-				"execution_count": 34
-			},
-			{
-				"cell_type": "code",
-				"metadata": {
-					"jupyter": {
-						"source_hidden": false,
-						"outputs_hidden": false
-					},
-					"nteract": {
-						"transient": {
-							"deleting": false
-						}
-					},
-					"microsoft": {
-						"language": "python"
-					},
-					"collapsed": true
-				},
-				"source": [
-					"%%pyspark\r\n",
 					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/'\r\n",
 					"files = mssparkutils.fs.ls(filepath)\r\n",
 					"for file in files:\r\n",
