@@ -74,10 +74,11 @@
 					"    filepath = file.path\r\n",
 					"    filename = file.name\r\n",
 					"    lsfilename = filename.split(\".\")\r\n",
-					"    if 'parquet' in lsfilename:\r\n",
+					"    #if 'parquet' in lsfilename:\r\n",
+					"    if 'csv' in lsfilename:\r\n",
 					"        coreFileName = lsfilename[2]\r\n",
 					"        print(coreFileName + ' - ' + filename) \r\n",
-					"        writetable(filepath,coreFileName)\r\n",
+					"        #writetable(filepath,coreFileName)\r\n",
 					"\r\n",
 					"\r\n",
 					"def writetable(currentFilePath,targetTableName):\r\n",
@@ -85,7 +86,7 @@
 					"    df = spark.read.cvs(strfilepath)\r\n",
 					"    df.write.mode(\"overwrite\").saveAsTable(strfilename)"
 				],
-				"execution_count": 6
+				"execution_count": 8
 			}
 		]
 	}
