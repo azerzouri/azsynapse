@@ -83,6 +83,83 @@
 					"    df.write.mode(\"overwrite\").saveAsTable(coreFileName)"
 				],
 				"execution_count": 22
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"import pandas as pd\r\n",
+					"import numpy as np\r\n",
+					"# Import the DecisionTreeClassifier\r\n",
+					"from sklearn.tree import DecisionTreeClassifier\r\n",
+					"df = spark.sql(\"SELECT * FROM germancredit\")\r\n",
+					"#df.show(10)\r\n",
+					"\r\n",
+					"dataset = df.toPandas()\r\n",
+					"print(dataset)\r\n",
+					"###\r\n",
+					"#Split the data into a training and a testing set\r\n",
+					"###\r\n",
+					"\r\n",
+					"train_features = dataset.iloc[:800,0:]\r\n",
+					"#print(train_features)\r\n",
+					"test_features = dataset.iloc[800:,0:]\r\n",
+					"print(test_features)\r\n",
+					"train_targets = dataset.iloc[:800,0]\r\n",
+					"#print(train_targets)\r\n",
+					"test_targets = dataset.iloc[800:,0]\r\n",
+					"print(test_targets)\r\n",
+					"\r\n",
+					"\r\n",
+					"\r\n",
+					"\r\n",
+					"###########################################################################################################\r\n",
+					"\r\n",
+					"##########################################################################################################\r\n",
+					"\r\n",
+					"\r\n",
+					"###\r\n",
+					"#Train the model\r\n",
+					"###\r\n",
+					"\r\n",
+					"tree = DecisionTreeClassifier(criterion = 'entropy').fit(train_features,train_targets)\r\n",
+					"\r\n",
+					"###########################################################################################################\r\n",
+					"\r\n",
+					"##########################################################################################################\r\n",
+					"\r\n",
+					"###\r\n",
+					"#Predict the classes of new, unseen data\r\n",
+					"###\r\n",
+					"prediction = tree.predict(test_features)\r\n",
+					"print(prediction)\r\n",
+					"###########################################################################################################\r\n",
+					"\r\n",
+					"##########################################################################################################\r\n",
+					"\r\n",
+					"###\r\n",
+					"#Check the accuracy\r\n",
+					"###\r\n",
+					"\r\n",
+					"print(\"The prediction accuracy is: \",tree.score(test_features,test_targets)*100,\"%\")\r\n",
+					""
+				],
+				"execution_count": 28
 			}
 		]
 	}
