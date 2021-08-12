@@ -82,7 +82,7 @@
 					"    df1 = spark.read.csv(filepath)\r\n",
 					"    df1.write.mode(\"overwrite\").saveAsTable(coreFileName)"
 				],
-				"execution_count": null
+				"execution_count": 36
 			},
 			{
 				"cell_type": "code",
@@ -106,7 +106,7 @@
 					"df = spark.sql(\"SELECT * FROM germancredit\")\r\n",
 					"df.show(5)"
 				],
-				"execution_count": null
+				"execution_count": 37
 			},
 			{
 				"cell_type": "code",
@@ -178,7 +178,7 @@
 					"print(\"The prediction accuracy is: \",tree.score(test_features,test_targets)*100,\"%\")\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 38
 			}
 		]
 	}
