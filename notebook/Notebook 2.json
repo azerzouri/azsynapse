@@ -86,7 +86,7 @@
 					"    df = spark.read.cvs(strfilepath)\r\n",
 					"    df.write.mode(\"overwrite\").saveAsTable(strfilename)"
 				],
-				"execution_count": 8
+				"execution_count": 21
 			}
 		]
 	}
