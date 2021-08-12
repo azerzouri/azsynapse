@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 4",
+	"properties": {
+		"content": {
+			"query": "SELECT count(0)\n FROM [nytdata]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "Built-in",
+				"databaseName": "default"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

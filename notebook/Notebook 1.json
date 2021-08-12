@@ -4,7 +4,7 @@
 		"nbformat": 4,
 		"nbformat_minor": 2,
 		"bigDataPool": {
-			"referenceName": "azSparky",
+			"referenceName": "synsparkdev",
 			"type": "BigDataPoolReference"
 		},
 		"sessionProperties": {
@@ -21,9 +21,6 @@
 		},
 		"metadata": {
 			"saveOutput": true,
-			"synapse_widget": {
-				"version": "0.1"
-			},
 			"kernelspec": {
 				"name": "synapse_sparkdotnet",
 				"display_name": "Synapse SparkDotNet"
@@ -32,10 +29,10 @@
 				"name": "csharp"
 			},
 			"a365ComputeOptions": {
-				"id": "/subscriptions/8ad6dfa9-faf9-449e-a7a5-0dc9cda0acf7/resourceGroups/az_sandBox_synapse/providers/Microsoft.Synapse/workspaces/az-sandbox-synapse-analytics/bigDataPools/azSparky",
-				"name": "azSparky",
+				"id": "/subscriptions/996a3763-53a7-4a9f-b5f1-d0f02df02a11/resourceGroups/sys-aziz_rg/providers/Microsoft.Synapse/workspaces/syn-az-dev/bigDataPools/synsparkdev",
+				"name": "synsparkdev",
 				"type": "Spark",
-				"endpoint": "https://az-sandbox-synapse-analytics.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/azSparky",
+				"endpoint": "https://syn-az-dev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/synsparkdev",
 				"auth": {
 					"type": "AAD",
 					"authResource": "https://dev.azuresynapse.net"
