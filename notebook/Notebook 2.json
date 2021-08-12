@@ -106,7 +106,7 @@
 					"df = spark.sql(\"SELECT * FROM germancredit\")\r\n",
 					"df.show(5)"
 				],
-				"execution_count": null
+				"execution_count": 29
 			},
 			{
 				"cell_type": "code",
@@ -166,7 +166,7 @@
 					"#Predict the classes of new, unseen data\r\n",
 					"###\r\n",
 					"prediction = tree.predict(test_features)\r\n",
-					"print(prediction)\r\n",
+					"#print(prediction)\r\n",
 					"###########################################################################################################\r\n",
 					"\r\n",
 					"##########################################################################################################\r\n",
@@ -178,7 +178,7 @@
 					"print(\"The prediction accuracy is: \",tree.score(test_features,test_targets)*100,\"%\")\r\n",
 					""
 				],
-				"execution_count": 28
+				"execution_count": 32
 			}
 		]
 	}
