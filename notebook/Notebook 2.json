@@ -66,28 +66,12 @@
 				"source": [
 					"%%pyspark\r\n",
 					"from notebookutils import mssparkutils\r\n",
-					"\r\n",
-					"files = mssparkutils.fs.ls('abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/')\r\n",
-					"\r\n",
-					"for file in files:\r\n",
-					"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
-					"    filepath = file.path\r\n",
-					"    filename = file.name\r\n",
-					"    print(filename)\r\n",
-					"    lsfilename = filename.split(\".\")\r\n",
-					"#   if 'parquet' in lsfilename:\r\n",
-					"    if 'csv' in lsfilename:\r\n",
-					"        coreFileName = lsfilename[2]\r\n",
-					"        print(coreFileName + ' - ' + filename) \r\n",
-					"        writetable(filepath,coreFileName)\r\n",
-					"\r\n",
-					"\r\n",
-					"def writetable(currentFilePath,targetTableName):\r\n",
-					"    # df = spark.read.parquet(strfilepath)\r\n",
-					"    df = spark.read.csv(currentFilePath)\r\n",
-					"    df.write.mode(\"overwrite\").saveAsTable(targetTableName)"
+					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/germancredit.csv'\r\n",
+					"tblname ='germancredit'\r\n",
+					"df = spark.read.csv(filepath)\r\n",
+					"df.write.mode(\"overwrite\").saveAsTable(tblname)"
 				],
-				"execution_count": 43
+				"execution_count": 34
 			},
 			{
 				"cell_type": "code",
@@ -108,13 +92,24 @@
 				},
 				"source": [
 					"%%pyspark\r\n",
-					"from notebookutils import mssparkutils\r\n",
-					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/germancredit.csv'\r\n",
-					"tblname ='germancredit'\r\n",
-					"df = spark.read.csv(filepath)\r\n",
-					"df.write.mode(\"overwrite\").saveAsTable(tblname)"
+					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/'\r\n",
+					"files = mssparkutils.fs.ls(filepath)\r\n",
+					"for file in files:\r\n",
+					"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+					"    filepath = file.path\r\n",
+					"    filename = file.name\r\n",
+					"    lsfilename = filename.split(\".\")\r\n",
+					"    if 'csv' in lsfilename:\r\n",
+					"        coreFileName = lsfilename[0]\r\n",
+					"        # print(coreFileName)\r\n",
+					"        writetable(filepath,coreFileName)\r\n",
+					"\r\n",
+					"def writetable(filepath,coreFileName):\r\n",
+					"    # df = spark.read.parquet(strfilepath)\r\n",
+					"    df = spark.read.csv(filepath)\r\n",
+					"    df.write.mode(\"overwrite\").saveAsTable(coreFileName)"
 				],
-				"execution_count": 34
+				"execution_count": 22
 			}
 		]
 	}
