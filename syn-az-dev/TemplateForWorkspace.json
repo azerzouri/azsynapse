@@ -1,0 +1,1220 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"type": "string",
+			"metadata": "Workspace name",
+			"defaultValue": "syn-az-dev"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"az-sandbox-synapse-analytics-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'az-sandbox-synapse-analytics-WorkspaceDefaultSqlServer'"
+		},
+		"lastsynapse-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'lastsynapse-WorkspaceDefaultSqlServer'"
+		},
+		"syn-az-dev-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'syn-az-dev-WorkspaceDefaultSqlServer'"
+		},
+		"syn-az-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://synadlsaz01.dfs.core.windows.net"
+		},
+		"nyc_tlc_fhv_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'nyc_tlc_fhv'"
+		}
+	},
+	"variables": {
+		"workspaceId": "[concat('Microsoft.Synapse/workspaces/', parameters('workspaceName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('workspaceName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AzureSqlDatabase1')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/az-sandbox-synapse-analytics-WorkspaceDefaultSqlServer')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"parameters": {
+					"DBName": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('az-sandbox-synapse-analytics-WorkspaceDefaultSqlServer_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/lastsynapse-WorkspaceDefaultSqlServer')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"parameters": {
+					"DBName": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('lastsynapse-WorkspaceDefaultSqlServer_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/syn-az-dev-WorkspaceDefaultSqlServer')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"parameters": {
+					"DBName": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('syn-az-dev-WorkspaceDefaultSqlServer_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/syn-az-dev-WorkspaceDefaultStorage')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('syn-az-dev-WorkspaceDefaultStorage_properties_typeProperties_url')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]",
+			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 0
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/WorkspaceSystemIdentity')]",
+			"type": "Microsoft.Synapse/workspaces/credentials",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"type": "ManagedIdentity",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 1')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT TOP (100) [ClaimSK]\n,[Claim_ID]\n,[Claim_No]\n,[Historic_RiverStone_Claim_No]\n,[Client_Claim_No]\n,[TPA_Claim_No]\n,[Archive_Claim_No]\n,[Policy_Period_ID]\n,[Policy_Version]\n,[TPA_CD]\n,[Broker_Claim_Ref_No]\n,[Other_Insured_Name]\n,[Claim_Status_Cd]\n,[Claim_Open_Dt]\n,[Claim_Close_Dt]\n,[Claim_Reopen_Dt]\n,[Date_Of_Loss]\n,[Reported_Date]\n,[Entered_Date]\n,[CC_TRGClaim_ID]\n,[Data_Create_Date]\n,[Data_Create_User]\n,[Data_Update_Date]\n,[Data_Update_User]\n,[FrameworkPackageInstanceID]\n,[Sys_User_Id]\n,[Sys_Create_Dt]\n,[Sys_User_Update_Id]\n,[Sys_RowStartDt]\n,[Sys_RowEndDt]\n,[TableHashValue]\n,[Source_System_Cd]\n FROM [default].[dbo].[clm_claim]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"poolName": "Built-in",
+						"databaseName": "default"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 2')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT \n  top 10 *\nFROM \n    OPENROWSET(BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/clm.Claim.parquet'\n    ,FORMAT='PARQUET'\n    ) AS [result]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"poolName": "Built-in",
+						"databaseName": "default"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 3')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT COUNT(1)\n FROM [default].[dbo].[claim]\nGO\nSELECT COUNT(1)\n FROM [default].[dbo].[exposure] \nGO",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"poolName": "Built-in",
+						"databaseName": "default"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/access parquet directly')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "CREATE EXTERNAL TABLE clm.Claim\nWITH (\n    LOCATION = 'trg@e2nprdadls01.dfs.core.windows.net/',\n    DATA_SOURCE = transdatapool,  \n    FILE_FORMAT = transdatapoolFormat)  \nAS\nSELECT \n   *\nFROM \n    OPENROWSET(BULK 'https://e2nprdadls01.dfs.core.windows.net/trg/synapse/cc_TransParq/parquet/clm.Claim.parquet'\n    ,FORMAT_TYPE='PARQUET'\n    ) AS [result]\nGO\n-- you can query the newly created external table\nSELECT * FROM clm.Claim",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"poolName": "azadxsqlpool",
+						"databaseName": "azadxsqlpool"
+					},
+					"resultLimit": -1
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Notebook 1')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "synsparkdev",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"kernelspec": {
+						"name": "synapse_sparkdotnet",
+						"display_name": "Synapse SparkDotNet"
+					},
+					"language_info": {
+						"name": "csharp"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/996a3763-53a7-4a9f-b5f1-d0f02df02a11/resourceGroups/sys-aziz_rg/providers/Microsoft.Synapse/workspaces/syn-az-dev/bigDataPools/synsparkdev",
+						"name": "synsparkdev",
+						"type": "Spark",
+						"endpoint": "https://syn-az-dev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/synsparkdev",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "2.4",
+						"nodeCount": 3,
+						"cores": 4,
+						"memory": 28,
+						"automaticScaleJobs": false
+					},
+					"sessionKeepAliveTimeout": 30
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {
+							"microsoft": {
+								"language": "scala"
+							}
+						},
+						"source": [
+							"%%spark\n",
+							"spark.sql(\"DROP TABLE IF EXISTS aztblscala\")\n",
+							"spark.sql(\"DROP TABLE IF EXISTS aztbl\")"
+						],
+						"outputs": [],
+						"execution_count": 2
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"microsoft": {
+								"language": "scala"
+							}
+						},
+						"source": [
+							"%%spark\n",
+							"val df = spark.read.option(\"header\",true).csv(\"abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\")\n",
+							"df.write.mode(\"overwrite\").saveAsTable(\"aztblscala\")\n",
+							"df.printSchema()"
+						],
+						"outputs": [],
+						"execution_count": 3
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"microsoft": {
+								"language": "python"
+							},
+							"diagram": {
+								"activateDiagramType": 1,
+								"chartConfig": {
+									"category": "bar",
+									"keys": [
+										"YEARMONTH"
+									],
+									"values": [
+										"YEARMONTH"
+									],
+									"yLabel": "YEARMONTH",
+									"xLabel": "YEARMONTH",
+									"aggregation": "COUNT",
+									"aggByBackend": false
+								},
+								"aggData": "{\"YEARMONTH\":{\"201909\":10}}",
+								"isSummary": false,
+								"previewData": {
+									"filter": null
+								},
+								"isSql": false
+							}
+						},
+						"source": [
+							"%%pyspark\n",
+							"df = spark.read.load('abfss://azsandboxfilesys@azsandboxlake2.dfs.core.windows.net/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv', format='csv'\n",
+							"## If header exists uncomment line below\n",
+							", header=True\n",
+							")\n",
+							"df.write.mode(\"overwrite\").saveAsTable(\"aztbl\")\n",
+							"display(df.limit(10))\n",
+							"## df.printSchema()"
+						],
+						"outputs": [],
+						"execution_count": 4
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"microsoft": {
+								"language": "csharp"
+							},
+							"diagram": {
+								"activateDiagramType": 1,
+								"chartConfig": {
+									"category": "bar",
+									"keys": [
+										"YEARMONTH"
+									],
+									"values": [
+										"YEARMONTH"
+									],
+									"yLabel": "YEARMONTH",
+									"xLabel": "YEARMONTH",
+									"aggregation": "COUNT",
+									"aggByBackend": false
+								},
+								"aggData": "{\"YEARMONTH\":{\"201904\":543,\"201909\":62,\"201911\":173,\"201912\":223}}",
+								"isSummary": false,
+								"previewData": {
+									"filter": null
+								},
+								"isSql": false
+							}
+						},
+						"source": [
+							"%%csharp\n",
+							"var accountName = \"azsandboxlake2\";\n",
+							"var containerName = \"azsandboxfilesys\";\n",
+							"var file = \"/test/StormEvents_locations-ftp_v1.0_d2019_c20200922.csv\";\n",
+							"\n",
+							"// Build the ADLS path to that file\n",
+							"var adlsInputPath = $\"abfss://{containerName}@{accountName}.dfs.core.windows.net/{file}\";\n",
+							"var inputReader = spark.Read()\n",
+							"    .Option(\"header\", true)\n",
+							"    .Option(\"delimiter\", \",\")\n",
+							"    .Option(\"charset\", \"iso-8859-1\");\n",
+							"\n",
+							"var inputDataFrame = inputReader.Csv(new string[] {adlsInputPath});\n",
+							"\n",
+							"// Add a unique ID to our movies list\n",
+							"inputDataFrame = inputDataFrame\n",
+							"    .WithColumn(\"ID\", Expr(\"uuid()\"));\n",
+							"\n",
+							"// Display the DataFrame\n",
+							"Display(inputDataFrame);"
+						],
+						"outputs": [],
+						"execution_count": 5
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"outputCollapsed": true,
+							"microsoft": {
+								"language": "sparksql"
+							},
+							"diagram": {
+								"activateDiagramType": 1,
+								"chartConfig": {
+									"category": "bar",
+									"keys": [],
+									"values": [],
+									"yLabel": "",
+									"xLabel": "",
+									"aggregation": "SUM",
+									"aggByBackend": false
+								},
+								"aggData": "{}",
+								"isSummary": false,
+								"previewData": {
+									"filter": null
+								},
+								"isSql": true
+							}
+						},
+						"source": [
+							"%%sql\n",
+							"SELECT  * FROM aztbl LIMIT 10\n",
+							"--SELECT * FROM aztblscala LIMIT 10\n",
+							""
+						],
+						"outputs": [],
+						"execution_count": 5
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"microsoft": {
+								"language": "scala"
+							}
+						},
+						"source": [
+							"%%spark\n",
+							"val df = spark.sql(\"SELECT * FROM aztblscala WHERE LOCATION = 'NEW HAMPSHIRE'\") \n",
+							"df.show(10)"
+						],
+						"outputs": [],
+						"execution_count": 3
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"def slicer(my_str,sub):\r\n",
+							"   index=my_str.find(sub)\r\n",
+							"   if index !=-1 :\r\n",
+							"         return my_str[1+index:] \r\n",
+							"   else :\r\n",
+							"         raise Exception('Sub string not found!')\r\n",
+							"s=\"have an egg please\"\r\n",
+							"slicer(s,'egg')"
+						],
+						"outputs": [],
+						"execution_count": null
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"df = spark.read.option(\"delimiter\", \"|\").load('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/clm.Claim.parquet', format='parquet'\r\n",
+							"## If header exists uncomment line below\r\n",
+							", header=True\r\n",
+							")\r\n",
+							"df.write.mode(\"overwrite\").saveAsTable(\"clm_Claim\")\r\n",
+							"##display(df.limit(10))\r\n",
+							"df.printSchema()"
+						],
+						"outputs": [],
+						"execution_count": null
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"import sys, os\r\n",
+							"import pandas as pd\r\n",
+							"\r\n",
+							"mylist = []\r\n",
+							"root = \"e2nprdadls01.core.windows.net/trg/synapse/cc_TransParq/parquet/\"\r\n",
+							"path = os.path.join(root, \"trg\") \r\n",
+							"\r\n",
+							"for path, subdirs, files in os.walk(path):\r\n",
+							"    for name in files:\r\n",
+							"        mylist.append(os.path.join(path, name))\r\n",
+							"\r\n",
+							"\r\n",
+							"df = pd.DataFrame(mylist)\r\n",
+							"print(df)"
+						],
+						"outputs": [],
+						"execution_count": 9
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"        \r\n",
+							"from pyspark.dbutils import DBUtils\r\n",
+							"dbutils = DBUtils(spark)\r\n",
+							"    \r\n",
+							"files = dbutils.fs.ls('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet')\r\n",
+							"\r\n",
+							"for fi in files: \r\n",
+							"  print(fi.path)"
+						],
+						"outputs": [],
+						"execution_count": 17
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/cc_transrpt')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "synsparkdev",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
+					},
+					"language_info": {
+						"name": "python"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/996a3763-53a7-4a9f-b5f1-d0f02df02a11/resourceGroups/sys-aziz_rg/providers/Microsoft.Synapse/workspaces/syn-az-dev/bigDataPools/synsparkdev",
+						"name": "synsparkdev",
+						"type": "Spark",
+						"endpoint": "https://syn-az-dev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/synsparkdev",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "2.4",
+						"nodeCount": 3,
+						"cores": 4,
+						"memory": 28,
+						"automaticScaleJobs": false
+					},
+					"sessionKeepAliveTimeout": 30
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": true
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"def slicer(my_str,sub):\r\n",
+							"   index=my_str.find(sub)\r\n",
+							"   if index !=-1 :\r\n",
+							"         return my_str[1+index:] \r\n",
+							"   else :\r\n",
+							"         raise Exception('Sub string not found!')\r\n",
+							"#######################################\r\n",
+							"#######################################\r\n",
+							"\r\n",
+							"src_name = ['clm.Claim','clm.Exposure']\r\n",
+							"for tables in src_name:   \r\n",
+							"    spark.sql(\"DROP TABLE IF EXISTS {slicer(tables,'.')}\")\r\n",
+							"    loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/{tables}.parquet\"\r\n",
+							"    spark.sql(f\"CREATE TABLE IF NOT EXISTS {slicer(tables,'.')} USING PARQUET LOCATION '{loc}'\")"
+						],
+						"outputs": [],
+						"execution_count": 3
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")\r\n",
+							"loc = f\"abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/sourcetable.parquet\"\r\n",
+							"spark.sql(f\"CREATE TABLE IF NOT EXISTS sourcetable USING PARQUET LOCATION '{loc}'\")\r\n",
+							""
+						],
+						"outputs": [],
+						"execution_count": 7
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from pyspark.sql.functions import *\r\n",
+							"\r\n",
+							"spark.sql(\"DROP TABLE IF EXISTS sourcetable\")"
+						],
+						"outputs": [],
+						"execution_count": 8
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from notebookutils import mssparkutils\r\n",
+							" \r\n",
+							"files = mssparkutils.fs.ls('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/')\r\n",
+							" \r\n",
+							"for file in files:\r\n",
+							"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+							"    print(filelist)"
+						],
+						"outputs": [],
+						"execution_count": 1
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from notebookutils import mssparkutils\r\n",
+							"\r\n",
+							"files = mssparkutils.fs.ls('abfss://trg@e2nprdadls01.dfs.core.windows.net/synapse/cc_TransParq/parquet/')\r\n",
+							"\r\n",
+							"for file in files:\r\n",
+							"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+							"    filepath = file.path\r\n",
+							"    filename = file.name\r\n",
+							"    lsfilename = filename.split(\".\")\r\n",
+							"    if 'parquet' in lsfilename:\r\n",
+							"        coreFileName = lsfilename[2]\r\n",
+							"        print(coreFileName + ' - ' + filename) \r\n",
+							"        #writetable(filepath,coreFileName)\r\n",
+							"\r\n",
+							"\r\n",
+							"def writetable(currentFilePath,targetTableName):\r\n",
+							"    df = spark.read.parquet(strfilepath)\r\n",
+							"    df.write.mode(\"overwrite\").saveAsTable(strfilename)"
+						],
+						"outputs": [],
+						"execution_count": null
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"blob_account_name = \"azureopendatastorage\"\r\n",
+							"blob_container_name = \"nyctlc\"\r\n",
+							"blob_relative_path = \"fhv\"\r\n",
+							"blob_sas_token = r\"\"\r\n",
+							"# Allow SPARK to read from Blob remotely\r\n",
+							"wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path)\r\n",
+							"\r\n",
+							"spark.conf.set(\r\n",
+							"    'fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name),\r\n",
+							"    blob_sas_token)\r\n",
+							"df = spark.read.parquet(wasbs_path)\r\n",
+							"df.write.mode(\"overwrite\").saveAsTable(\"default.NYTdata\")"
+						],
+						"outputs": [],
+						"execution_count": null
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/regressionML')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "synsparkdev",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
+					},
+					"language_info": {
+						"name": "python"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/996a3763-53a7-4a9f-b5f1-d0f02df02a11/resourceGroups/sys-aziz_rg/providers/Microsoft.Synapse/workspaces/syn-az-dev/bigDataPools/synsparkdev",
+						"name": "synsparkdev",
+						"type": "Spark",
+						"endpoint": "https://syn-az-dev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/synsparkdev",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "2.4",
+						"nodeCount": 3,
+						"cores": 4,
+						"memory": 28
+					}
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {
+							"collapsed": false
+						},
+						"source": [
+							"import matplotlib.pyplot as plt\r\n",
+							"from datetime import datetime\r\n",
+							"from dateutil import parser\r\n",
+							"from pyspark.sql.functions import unix_timestamp, date_format, col, when\r\n",
+							"from pyspark.ml import Pipeline\r\n",
+							"from pyspark.ml import PipelineModel\r\n",
+							"from pyspark.ml.feature import RFormula\r\n",
+							"from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorIndexer\r\n",
+							"from pyspark.ml.classification import LogisticRegression\r\n",
+							"from pyspark.mllib.evaluation import BinaryClassificationMetrics\r\n",
+							"from pyspark.ml.evaluation import BinaryClassificationEvaluator\r\n",
+							"\r\n",
+							"\r\n",
+							"from azureml.opendatasets import NycTlcYellow\r\n",
+							"\r\n",
+							"end_date = parser.parse('2018-06-06')\r\n",
+							"start_date = parser.parse('2018-05-01')\r\n",
+							"nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)\r\n",
+							"filtered_df = nyc_tlc.to_spark_dataframe()\r\n",
+							"\r\n",
+							"\r\n",
+							"# To make development easier, faster, and less expensive, downsample for now\r\n",
+							"sampled_taxi_df = filtered_df.sample(True, 0.001, seed=1234)\r\n",
+							"\r\n",
+							"#sampled_taxi_df.show(5)\r\n",
+							"display(sampled_taxi_df)\r\n",
+							"\r\n",
+							"sampled_taxi_df.createOrReplaceTempView(\"nytaxi\")\r\n",
+							"\r\n",
+							"taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount'\\\r\n",
+							"                                , 'tripDistance', 'tpepPickupDateTime', 'tpepDropoffDateTime'\\\r\n",
+							"                                , date_format('tpepPickupDateTime', 'hh').alias('pickupHour')\\\r\n",
+							"                                , date_format('tpepPickupDateTime', 'EEEE').alias('weekdayString')\\\r\n",
+							"                                , (unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('tripTimeSecs')\\\r\n",
+							"                                , (when(col('tipAmount') > 0, 1).otherwise(0)).alias('tipped')\r\n",
+							"                                )\\\r\n",
+							"                        .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\\\r\n",
+							"                                & (sampled_taxi_df.tipAmount >= 0) & (sampled_taxi_df.tipAmount <= 25)\\\r\n",
+							"                                & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\\\r\n",
+							"                                & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\\\r\n",
+							"                                & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 100)\\\r\n",
+							"                                & (sampled_taxi_df.rateCodeId <= 5)\r\n",
+							"                                & (sampled_taxi_df.paymentType.isin({\"1\", \"2\"}))\r\n",
+							"                                )\r\n",
+							"\r\n",
+							"\r\n",
+							"taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'passengerCount'\\\r\n",
+							"                , 'tripDistance', 'weekdayString', 'pickupHour','tripTimeSecs','tipped'\\\r\n",
+							"                , when((taxi_df.pickupHour <= 6) | (taxi_df.pickupHour >= 20),\"Night\")\\\r\n",
+							"                .when((taxi_df.pickupHour >= 7) & (taxi_df.pickupHour <= 10), \"AMRush\")\\\r\n",
+							"                .when((taxi_df.pickupHour >= 11) & (taxi_df.pickupHour <= 15), \"Afternoon\")\\\r\n",
+							"                .when((taxi_df.pickupHour >= 16) & (taxi_df.pickupHour <= 19), \"PMRush\")\\\r\n",
+							"                .otherwise(0).alias('trafficTimeBins')\r\n",
+							"                )\\\r\n",
+							"        .filter((taxi_df.tripTimeSecs >= 30) & (taxi_df.tripTimeSecs <= 7200))\r\n",
+							"# Because the sample uses an algorithm that works only with numeric features, convert them so they can be consumed\r\n",
+							"sI1 = StringIndexer(inputCol=\"trafficTimeBins\", outputCol=\"trafficTimeBinsIndex\")\r\n",
+							"en1 = OneHotEncoder(dropLast=False, inputCol=\"trafficTimeBinsIndex\", outputCol=\"trafficTimeBinsVec\")\r\n",
+							"sI2 = StringIndexer(inputCol=\"weekdayString\", outputCol=\"weekdayIndex\")\r\n",
+							"en2 = OneHotEncoder(dropLast=False, inputCol=\"weekdayIndex\", outputCol=\"weekdayVec\")\r\n",
+							"\r\n",
+							"# Create a new DataFrame that has had the encodings applied\r\n",
+							"encoded_final_df = Pipeline(stages=[sI1, en1, sI2, en2]).fit(taxi_featurised_df).transform(taxi_featurised_df)\r\n",
+							"\r\n",
+							"# Decide on the split between training and testing data from the DataFrame\r\n",
+							"trainingFraction = 0.7\r\n",
+							"testingFraction = (1-trainingFraction)\r\n",
+							"seed = 1234\r\n",
+							"\r\n",
+							"# Split the DataFrame into test and training DataFrames\r\n",
+							"train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, testingFraction], seed=seed)\r\n",
+							"\r\n",
+							"## Create a new logistic regression object for the model\r\n",
+							"logReg = LogisticRegression(maxIter=10, regParam=0.3, labelCol = 'tipped')\r\n",
+							"\r\n",
+							"## The formula for the model\r\n",
+							"classFormula = RFormula(formula=\"tipped ~ pickupHour + weekdayVec + passengerCount + tripTimeSecs + tripDistance + fareAmount + paymentType+ trafficTimeBinsVec\")\r\n",
+							"\r\n",
+							"## Undertake training and create a logistic regression model\r\n",
+							"lrModel = Pipeline(stages=[classFormula, logReg]).fit(train_data_df)\r\n",
+							"\r\n",
+							"## Saving the model is optional, but it's another form of inter-session cache\r\n",
+							"datestamp = datetime.now().strftime('%m-%d-%Y-%s')\r\n",
+							"fileName = \"lrModel_\" + datestamp\r\n",
+							"logRegDirfilename = fileName\r\n",
+							"lrModel.save(logRegDirfilename)\r\n",
+							"\r\n",
+							"## Predict tip 1/0 (yes/no) on the test dataset; evaluation using area under ROC\r\n",
+							"predictions = lrModel.transform(test_data_df)\r\n",
+							"predictionAndLabels = predictions.select(\"label\",\"prediction\").rdd\r\n",
+							"metrics = BinaryClassificationMetrics(predictionAndLabels)\r\n",
+							"print(\"Area under ROC = %s\" % metrics.areaUnderROC)\r\n",
+							"\r\n",
+							"## Plot the ROC curve; no need for pandas, because this uses the modelSummary object\r\n",
+							"modelSummary = lrModel.stages[-1].summary\r\n",
+							"\r\n",
+							"plt.plot([0, 1], [0, 1], 'r--')\r\n",
+							"plt.plot(modelSummary.roc.select('FPR').collect(),\r\n",
+							"         modelSummary.roc.select('TPR').collect())\r\n",
+							"plt.xlabel('False Positive Rate')\r\n",
+							"plt.ylabel('True Positive Rate')\r\n",
+							"plt.show()"
+						],
+						"outputs": [],
+						"execution_count": 1
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/nyc_tlc_fhv')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"sasUri": "[parameters('nyc_tlc_fhv_sasUri')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Notebook 2')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "synsparkdev",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
+					},
+					"language_info": {
+						"name": "python"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/996a3763-53a7-4a9f-b5f1-d0f02df02a11/resourceGroups/sys-aziz_rg/providers/Microsoft.Synapse/workspaces/syn-az-dev/bigDataPools/synsparkdev",
+						"name": "synsparkdev",
+						"type": "Spark",
+						"endpoint": "https://syn-az-dev.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/synsparkdev",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "2.4",
+						"nodeCount": 3,
+						"cores": 4,
+						"memory": 28,
+						"automaticScaleJobs": false
+					},
+					"sessionKeepAliveTimeout": 30
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from notebookutils import mssparkutils\r\n",
+							"\r\n",
+							"files = mssparkutils.fs.ls('abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/')\r\n",
+							"\r\n",
+							"for file in files:\r\n",
+							"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+							"    filepath = file.path\r\n",
+							"    filename = file.name\r\n",
+							"    lsfilename = filename.split(\".\")\r\n",
+							"    #if 'parquet' in lsfilename:\r\n",
+							"    if 'csv' in lsfilename:\r\n",
+							"        coreFileName = lsfilename[2]\r\n",
+							"        print(coreFileName + ' - ' + filename) \r\n",
+							"        writetable(filepath,coreFileName)\r\n",
+							"\r\n",
+							"\r\n",
+							"def writetable(currentFilePath,targetTableName):\r\n",
+							"    # df = spark.read.parquet(strfilepath)\r\n",
+							"    df = spark.read.csv(currentFilePath)\r\n",
+							"    df.write.mode(\"overwrite\").saveAsTable(targetTableName)"
+						],
+						"outputs": [],
+						"execution_count": 31
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"microsoft": {
+								"language": "python"
+							},
+							"collapsed": true
+						},
+						"source": [
+							"%%pyspark\r\n",
+							"from notebookutils import mssparkutils\r\n",
+							"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/germancredit.csv'\r\n",
+							"tblname ='germancredit'\r\n",
+							"df = spark.read.csv(filepath)\r\n",
+							"df.write.mode(\"overwrite\").saveAsTable(tblname)"
+						],
+						"outputs": [],
+						"execution_count": 34
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 4')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT count(0)\n FROM [nytdata]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"poolName": "Built-in",
+						"databaseName": "default"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn-az-dev"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"az-sandbox-synapse-analytics-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"lastsynapse-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"syn-az-dev-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"syn-az-dev-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://synadlsaz01.dfs.core.windows.net"
+		},
+		"nyc_tlc_fhv_sasUri": {
+			"value": ""
+		}
+	}
+}
