@@ -67,14 +67,15 @@
 					"%%pyspark\r\n",
 					"from notebookutils import mssparkutils\r\n",
 					"\r\n",
-					"files = mssparkutils.fs.ls('abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/')\r\n",
+					"files = mssparkutils.fs.ls('abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/')\r\n",
 					"\r\n",
 					"for file in files:\r\n",
 					"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
 					"    filepath = file.path\r\n",
 					"    filename = file.name\r\n",
+					"    print(filename)\r\n",
 					"    lsfilename = filename.split(\".\")\r\n",
-					"    #if 'parquet' in lsfilename:\r\n",
+					"#   if 'parquet' in lsfilename:\r\n",
 					"    if 'csv' in lsfilename:\r\n",
 					"        coreFileName = lsfilename[2]\r\n",
 					"        print(coreFileName + ' - ' + filename) \r\n",
@@ -86,7 +87,7 @@
 					"    df = spark.read.csv(currentFilePath)\r\n",
 					"    df.write.mode(\"overwrite\").saveAsTable(targetTableName)"
 				],
-				"execution_count": 31
+				"execution_count": 43
 			},
 			{
 				"cell_type": "code",
