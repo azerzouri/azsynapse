@@ -1154,11 +1154,11 @@
 							"\r\n",
 							"def writetable(filepath,coreFileName):\r\n",
 							"    # df = spark.read.parquet(strfilepath)\r\n",
-							"    df = spark.read.csv(filepath)\r\n",
-							"    df.write.mode(\"overwrite\").saveAsTable(coreFileName)"
+							"    df1 = spark.read.csv(filepath)\r\n",
+							"    df1.write.mode(\"overwrite\").saveAsTable(coreFileName)"
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 33
 					},
 					{
 						"cell_type": "code",
@@ -1183,7 +1183,7 @@
 							"df.show(5)"
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 34
 					},
 					{
 						"cell_type": "code",
@@ -1256,7 +1256,7 @@
 							""
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 35
 					}
 				]
 			},
