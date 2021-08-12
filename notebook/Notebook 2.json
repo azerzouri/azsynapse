@@ -95,7 +95,7 @@
 					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/'\r\n",
 					"files = mssparkutils.fs.ls(filepath)\r\n",
 					"for file in files:\r\n",
-					"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+					"    # filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
 					"    filepath = file.path\r\n",
 					"    filename = file.name\r\n",
 					"    lsfilename = filename.split(\".\")\r\n",
