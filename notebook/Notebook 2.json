@@ -79,10 +79,10 @@
 					"\r\n",
 					"def writetable(filepath,coreFileName):\r\n",
 					"    # df = spark.read.parquet(strfilepath)\r\n",
-					"    df = spark.read.csv(filepath)\r\n",
-					"    df.write.mode(\"overwrite\").saveAsTable(coreFileName)"
+					"    df1 = spark.read.csv(filepath)\r\n",
+					"    df1.write.mode(\"overwrite\").saveAsTable(coreFileName)"
 				],
-				"execution_count": null
+				"execution_count": 33
 			},
 			{
 				"cell_type": "code",
@@ -106,7 +106,7 @@
 					"df = spark.sql(\"SELECT * FROM germancredit\")\r\n",
 					"df.show(5)"
 				],
-				"execution_count": null
+				"execution_count": 34
 			},
 			{
 				"cell_type": "code",
@@ -178,7 +178,7 @@
 					"print(\"The prediction accuracy is: \",tree.score(test_features,test_targets)*100,\"%\")\r\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 35
 			}
 		]
 	}
