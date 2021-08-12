@@ -1158,7 +1158,7 @@
 							"    df1.write.mode(\"overwrite\").saveAsTable(coreFileName)"
 						],
 						"outputs": [],
-						"execution_count": 33
+						"execution_count": null
 					},
 					{
 						"cell_type": "code",
@@ -1183,7 +1183,7 @@
 							"df.show(5)"
 						],
 						"outputs": [],
-						"execution_count": 34
+						"execution_count": null
 					},
 					{
 						"cell_type": "code",
@@ -1256,7 +1256,7 @@
 							""
 						],
 						"outputs": [],
-						"execution_count": 35
+						"execution_count": null
 					}
 				]
 			},
