@@ -49,26 +49,43 @@
 			{
 				"cell_type": "code",
 				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
 					"microsoft": {
 						"language": "python"
-					}
+					},
+					"collapsed": true
 				},
 				"source": [
-					"%%pyspark\n",
-					"blob_account_name = \"azureopendatastorage\"\n",
-					"blob_container_name = \"nyctlc\"\n",
-					"blob_relative_path = \"fhv\"\n",
-					"blob_sas_token = r\"\"\n",
-					"# Allow SPARK to read from Blob remotely\n",
-					"wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path)\n",
-					"\n",
-					"spark.conf.set(\n",
-					"    'fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name),\n",
-					"    blob_sas_token)\n",
-					"df = spark.read.parquet(wasbs_path)\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"default.NYTdata\")"
+					"%%pyspark\r\n",
+					"from notebookutils import mssparkutils\r\n",
+					"\r\n",
+					"files = mssparkutils.fs.ls('abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/')\r\n",
+					"\r\n",
+					"for file in files:\r\n",
+					"    filelist = {'filename:' +file.name, 'fileDir:' + str(file.isDir), 'isfile:' + str(file.isFile), 'filepath:'+file.path, 'filesize:' + str(file.size)}\r\n",
+					"    filepath = file.path\r\n",
+					"    filename = file.name\r\n",
+					"    lsfilename = filename.split(\".\")\r\n",
+					"    if 'parquet' in lsfilename:\r\n",
+					"        coreFileName = lsfilename[2]\r\n",
+					"        print(coreFileName + ' - ' + filename) \r\n",
+					"        writetable(filepath,coreFileName)\r\n",
+					"\r\n",
+					"\r\n",
+					"def writetable(currentFilePath,targetTableName):\r\n",
+					"    # df = spark.read.parquet(strfilepath)\r\n",
+					"    df = spark.read.cvs(strfilepath)\r\n",
+					"    df.write.mode(\"overwrite\").saveAsTable(strfilename)"
 				],
-				"execution_count": 3
+				"execution_count": 6
 			}
 		]
 	}
