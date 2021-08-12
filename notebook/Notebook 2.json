@@ -78,15 +78,42 @@
 					"    if 'csv' in lsfilename:\r\n",
 					"        coreFileName = lsfilename[2]\r\n",
 					"        print(coreFileName + ' - ' + filename) \r\n",
-					"        #writetable(filepath,coreFileName)\r\n",
+					"        writetable(filepath,coreFileName)\r\n",
 					"\r\n",
 					"\r\n",
 					"def writetable(currentFilePath,targetTableName):\r\n",
 					"    # df = spark.read.parquet(strfilepath)\r\n",
-					"    df = spark.read.cvs(strfilepath)\r\n",
-					"    df.write.mode(\"overwrite\").saveAsTable(strfilename)"
+					"    df = spark.read.csv(currentFilePath)\r\n",
+					"    df.write.mode(\"overwrite\").saveAsTable(targetTableName)"
 				],
-				"execution_count": 21
+				"execution_count": 31
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": true
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"from notebookutils import mssparkutils\r\n",
+					"filepath = 'abfss://sysdfsaz01@synadlsaz01.dfs.core.windows.net/datafiles/germancredit.csv'\r\n",
+					"tblname ='germancredit'\r\n",
+					"df = spark.read.csv(filepath)\r\n",
+					"df.write.mode(\"overwrite\").saveAsTable(tblname)"
+				],
+				"execution_count": 34
 			}
 		]
 	}
